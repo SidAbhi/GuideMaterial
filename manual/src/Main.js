@@ -1,11 +1,13 @@
 import React from "react";
 import {LatarBelakang} from "./Content.js";
+import {SideNav} from "./Nav.js";
 
 const Main = () => {
 
 
 	return (
 		<div className = "content">
+			<SideNav />
 			<div className = "article">
 			<h1 className = "arTitle">Manual SAPA</h1>
 				<main>

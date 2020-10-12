@@ -17,4 +17,19 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+const SideNav = () => {
+  return (
+    <nav className = "side-nav">     
+    <ul className = "side-nav-links">
+      <Link to = "./">
+        <li>Latar Belakang</li>
+      </Link>
+      <Link to = "./profile">
+        <li>Teori</li>
+      </Link>
+    </ul>
+  </nav>
+  )
+};
+
+export { Nav, SideNav };
