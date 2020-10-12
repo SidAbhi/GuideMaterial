@@ -15,4 +15,4 @@ const LatarBelakang = () => {
         );
 };
 
-export default {LatarBelakang};
+export {LatarBelakang};
