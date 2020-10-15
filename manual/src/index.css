@@ -77,7 +77,10 @@ code {
   text-decoration: none;
   color: #f4f4f4;
 }
-.content {
+.contentBody {
+  background-color: #f4f4f4;
+}
+ .opening {
   display: grid;
   margin: 0 auto 0 auto;
   width: 60vw;
@@ -127,16 +130,35 @@ a {
   width: 100%;
   line-height: 1.4em;
   text-align: center;
+  margin-bottom: 35vh;
+}
+
+.latarBelakang {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+}
+
+.laxBannerLB {
+  background-color: #F9A846;
+  border-radius: 0px 24px 24px 0;
+}
+
+.contentLB {
+  margin: -15vh 5vh 0vh 5vh;
+}
+
+.chapterTitle {
+  text-align: center;
 }
 
 @media (min-width: 600px) {
-  .content {
+   .opening {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 440px) {
-  .content {
+   .opening {
     width: 85vw;
   }
   .top-nav {
@@ -162,6 +184,9 @@ a {
   .quote {
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));
   }
+  .chapterTitle {
+    font-size: calc(32px + 6 * ((100vw - 320px) / 680));
+  }
 }
 @media screen and (min-width: 1000px) {
   html {
@@ -169,5 +194,8 @@ a {
   }
   .quote {
     font-size: 48px;
+  }
+  .chapterTitle {
+    font-size: 64px;
   }
 }

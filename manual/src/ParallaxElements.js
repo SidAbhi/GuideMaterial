@@ -1,14 +1,15 @@
 import React from "react";
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import { Svganim1, Svganim2, Svganim3 } from './Svganim1';
 import { useMediaQuery } from 'react-responsive';
-import { ReactComponent as BG2 } from './images/ManualIllust1.svg';
-import { ReactComponent as DataIllust} from './images/Data1.svg';
 import { animated, useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
+import { LBTitle } from './Content.js';
 import { ReactComponent as BG3} from './images/BG2.svg';
 import { ReactComponent as BG1} from './images/BG1.svg';
 import { ReactComponent as Pen} from './images/Pen.svg';
+import { ReactComponent as BG2 } from './images/ManualIllust1.svg';
+import { ReactComponent as DataIllust} from './images/Data1.svg';
 
 const MainImg = () => {
     //Device check
@@ -192,7 +193,7 @@ const Img1 = () => {
             }}>
                 <Svganim3 />
             </Parallax>
-            <Parallax x = {[5, -5]} y={ mobileLaxVal2(100, -50) } 
+            <Parallax y={ mobileLaxVal2(100, -50) } 
                 styleOuter = {{
                     position: 'absolute',
                     top: '-30%',
@@ -204,14 +205,14 @@ const Img1 = () => {
                 }}
                 styleInner = {{
                     display: 'grid',
-                    width: mobileLaxVal(80),
-                    height: mobileLaxVal(80),
+                    width: mobileLaxVal(70),
+                    height: mobileLaxVal(70),
                     justifySelf: 'center',
                     alignSelf: 'center'
             }}>
                 <AnimatedData style = { { opacity: scrollAnim.opacity, transform: scrollAnim.rotate.interpolate(rotate => `rotate(-${rotate}turn)`) } } />
             </Parallax>
-            <Parallax x = {[5, -5]} y={ mobileLaxVal2(500, -450) } 
+            <Parallax y={ mobileLaxVal2(500, -450) } 
                 styleOuter = {{
                     position: 'absolute',
                     top: '-30%',
@@ -234,4 +235,27 @@ const Img1 = () => {
     );
 };
 
-export { MainImg, Img1 }
+const BannerLB = () => {
+    return (
+        <ParallaxBanner className = "laxBannerLB" 
+        layers = {[
+            {
+                image: './images/BG4.svg',
+                amount: 0.6,
+            },
+            {
+                children: <LBTitle />,
+                amount: -0.3,
+                expanded: false,
+            },
+        ]}
+        style = {{
+            height: '80vh',
+            color: '#f4f4f4',
+        }}>
+        </ParallaxBanner>
+        
+    );
+};
+
+export { MainImg, Img1, BannerLB }

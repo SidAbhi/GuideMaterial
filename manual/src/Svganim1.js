@@ -59,7 +59,6 @@ const Svganim2 = () => {
     return (        
         <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 688">
             <title>svganim2</title>
-            <a xlinkHref = "#latarBelakang">
             <animated.path 
             d={pathAnim.scroll2.interpolate({
                 range: [0, 51],
@@ -71,7 +70,6 @@ const Svganim2 = () => {
             })}
 
             fill="#F4F4F4"/>
-            </a>
         </svg>
     )
 };

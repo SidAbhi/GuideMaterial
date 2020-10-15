@@ -1,6 +1,7 @@
 import React from "react";
-import { LatarBelakang, OpenQuote } from "./Content.js";
-import { MainImg, Img1 } from './ParallaxElements';
+import { OpenQuote } from "./Content.js";
+import { MainImg, Img1, BannerLB } from './ParallaxElements';
+import { LatarBelakang } from "./Content.js";
 
 const Main = () => {
 
@@ -9,22 +10,14 @@ const Main = () => {
             <MainImg />
             <Img1 />
             <div className = "contentBody">
-                <div className = "content">
-                    <div className = "article">
-                        <main>
-                            <div className = "openQuote">
-                                <OpenQuote />
-                            </div>
-                            <div className = "Teori">
-                                <h2 id = "latarBelakang">Latar belakang</h2>
-                                <LatarBelakang />
-                            </div>
-                            <div className = "introduction">
-                                <h2>Latar belakang</h2>
-                                <LatarBelakang />
-                            </div>
-                        </main>
+                <div className = "opening">
+                    <div className = "openQuote">
+                        <OpenQuote />
                     </div>
+                </div>
+                <div className = "latarBelakang">
+                    <BannerLB />
+                    <LatarBelakang />
                 </div>
             </div>
         </div>
