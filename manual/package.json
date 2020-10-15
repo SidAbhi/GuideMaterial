@@ -1,6 +1,6 @@
 {
   "name": "manual",
-  "homepage": "https://sidabhi.github.io/GuideMaterial/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
