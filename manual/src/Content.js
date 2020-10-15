@@ -1,5 +1,12 @@
 import React from 'react';
 
+const OpenQuote = () => {
+
+    return (
+        <p class = "quote">SAPA memiliki dasar dari psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama diciptakan alat ini adalah <b>empowerment</b> dan <b>growth</b>.</p>
+        );
+};
+
 const LatarBelakang = () => {
 
     return (
@@ -15,4 +22,4 @@ const LatarBelakang = () => {
         );
 };
 
-export {LatarBelakang};
+export { LatarBelakang, OpenQuote };
