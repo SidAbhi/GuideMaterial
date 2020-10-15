@@ -7,7 +7,7 @@ import { Nav } from "./Nav";
 
 const Routes = () => {
   return (
-    <Router>
+    <Router basename = {process.env.PUBLIC_URL}>
       <Nav />
       <Switch>
         <Route exact path="/" component={Main} />
