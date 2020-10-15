@@ -77,9 +77,6 @@ code {
   text-decoration: none;
   color: #f4f4f4;
 }
-.contentBody {
-  background-color: #f4f4f4;
-}
 .content {
   display: grid;
   margin: 0 auto 0 auto;

@@ -91,7 +91,6 @@ const Svganim3 = () => {
     const bind = useScroll(
         ({ xy: [, y] }) => {
             set({ scroll3: Math.min(Math.max(parseInt(y), mobileLaxVal()[0]), mobileLaxVal()[1]) });
-            console.log(y);
         },
         { domTarget: window },
     ); 

@@ -4,14 +4,17 @@ import { Svganim1, Svganim2, Svganim3 } from './Svganim1';
 import { useMediaQuery } from 'react-responsive';
 import { ReactComponent as BG2 } from './images/ManualIllust1.svg';
 import { ReactComponent as DataIllust} from './images/Data1.svg';
-import { animated, useSpring, interpolate } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
 import { ReactComponent as BG3} from './images/BG2.svg';
 import { ReactComponent as BG1} from './images/BG1.svg';
+import { ReactComponent as Pen} from './images/Pen.svg';
 
 const MainImg = () => {
+    //Device check
     const mediaQ = useMediaQuery({ query: '(max-width: 770px), (max-aspect-ratio: 1/1)' });
 
+    //parallax element styling
     const styleBotAlign = () => {
         return (
             {
@@ -55,6 +58,7 @@ const MainImg = () => {
         
     };
 
+    //parallax element value depending on device
     const mobileLaxVal = (y, z) => {
         if(mediaQ) {
             return [40 + y, -50 + z];
@@ -121,13 +125,14 @@ const MainImg = () => {
 
 const Img1 = () => {
     const AnimatedData = animated(DataIllust)
+    const AnimatedPen = animated(Pen)
     const mediaQ = useMediaQuery({ query: '(max-width: 700px), (max-aspect-ratio: 1/1)' });
 
-    const mobileLaxVal = () => {
+    const mobileLaxVal = (size) => {
         if(mediaQ) {
-            return 80 + '%';
+            return size + '%';
         } else {
-            return 35 + '%';
+            return size/2 + '%';
         };
     };
 
@@ -143,17 +148,22 @@ const Img1 = () => {
         if(mediaQ) {
             return [100 + x, 150 + y];
         } else {
-            return [300 + x, 350 + y];
+            return [200 + x, 250 + y];
         };
     };
 
     const [scrollAnim , set] = useSpring(() => ({opacity: 0, rotate: 0 }));
+    const [scrollAnim2 , set2] = useSpring(() => ({opacity: 0, rotate: 0 }));
 
     const bind = useScroll(
         ({ xy: [, y] }) => {
             set({ 
                 opacity: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,0)[0])*1000/mobileLaxVal3(0,0)[1]), 0), 1000)/1000,
                 rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*50/mobileLaxVal3(0,100)[1]), 0), 1000)/1000  
+            });
+            set2({
+                opacity: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,0)[0])*1000/mobileLaxVal3(0,0)[1]), 0), 1000)/1000,
+                rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*20/mobileLaxVal3(0,100)[1]), 0), 1000)/1000  
             });
         },
         { domTarget: window },
@@ -166,7 +176,7 @@ const Img1 = () => {
             <Parallax y={ mobileLaxVal2(0, 0) } 
                 styleOuter = {{
                     position: 'absolute',
-                    top: '-35%',
+                    top: '-40%',
                     display: 'grid',
                     width: '100%',
                     height: '100%',
@@ -175,17 +185,17 @@ const Img1 = () => {
                 }}
                 styleInner = {{
                     display: 'grid',
-                    width: mobileLaxVal(),
-                    height: mobileLaxVal(),
+                    width: mobileLaxVal(80),
+                    height: mobileLaxVal(80),
                     justifySelf: 'center',
                     alignSelf: 'center'
             }}>
                 <Svganim3 />
             </Parallax>
-            <Parallax x = {[5, -5]} y={ mobileLaxVal2(150, -100) } 
+            <Parallax x = {[5, -5]} y={ mobileLaxVal2(100, -50) } 
                 styleOuter = {{
                     position: 'absolute',
-                    top: '-35%',
+                    top: '-30%',
                     display: 'grid',
                     width: '100%',
                     height: '100%',
@@ -194,12 +204,31 @@ const Img1 = () => {
                 }}
                 styleInner = {{
                     display: 'grid',
-                    width: mobileLaxVal(),
-                    height: mobileLaxVal(),
+                    width: mobileLaxVal(80),
+                    height: mobileLaxVal(80),
                     justifySelf: 'center',
                     alignSelf: 'center'
             }}>
                 <AnimatedData style = { { opacity: scrollAnim.opacity, transform: scrollAnim.rotate.interpolate(rotate => `rotate(-${rotate}turn)`) } } />
+            </Parallax>
+            <Parallax x = {[5, -5]} y={ mobileLaxVal2(500, -450) } 
+                styleOuter = {{
+                    position: 'absolute',
+                    top: '-30%',
+                    display: 'grid',
+                    width: '100%',
+                    height: '100%',
+                    gridTemplateColumns: '1fr',
+                }}
+                styleInner = {{
+                    display: 'grid',
+                    position: 'absolute',
+                    left: '55%',
+                    width: mobileLaxVal(30),
+                    height: mobileLaxVal(30),
+                    alignSelf: 'center'
+            }}>
+                <AnimatedPen style = { { opacity: scrollAnim2.opacity, transform: scrollAnim2.rotate.interpolate(rotate => `rotate(${rotate}turn)`) } } />
             </Parallax>
         </div>
     );
