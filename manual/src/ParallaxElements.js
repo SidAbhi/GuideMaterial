@@ -236,6 +236,8 @@ const Img1 = () => {
 };
 
 const BannerLB = () => {
+    const mediaQ = useMediaQuery({ query: '(max-width: 770px)' });
+    const reponsiveHeight = () => mediaQ ? '50vh' : '80vh';
     return (
         <ParallaxBanner className = "laxBannerLB" 
         layers = {[
@@ -250,7 +252,7 @@ const BannerLB = () => {
             },
         ]}
         style = {{
-            height: '80vh',
+            height: reponsiveHeight(),
             color: '#f4f4f4',
         }}>
         </ParallaxBanner>

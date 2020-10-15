@@ -149,18 +149,32 @@ a {
 
 .chapterTitle {
   text-align: center;
+  letter-spacing: .1em;
+  overflow-wrap: break-word;
+  font-weight: 900;
 }
 
-@media (min-width: 600px) {
-   .opening {
-    grid-template-columns: 1fr;
+@media (max-width: 770px) {
+  .latarBelakang {
+    display: block;
+  }
+  .laxBannerLB {
+    background-color: #F9A846;
+    border-radius: 24px 24px 24px 24px;
+  }
+  .contentLB {
+    margin: 7vh auto 0 auto;
+    width: 85vw;
+  }
+  .opening {
+    width: 85vw;
+  }
+  .quote {
+    margin-bottom: 15vh;
   }
 }
 
 @media (max-width: 440px) {
-   .opening {
-    width: 85vw;
-  }
   .top-nav {
     margin-top: 0;
     display: flex;
@@ -177,7 +191,7 @@ a {
   }
 }
 
-@media screen and (min-width: 320px) {
+@media (min-width: 320px) {
   html {
     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
   }
@@ -185,10 +199,10 @@ a {
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));
   }
   .chapterTitle {
-    font-size: calc(32px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(60px + 6 * ((100vw - 320px) / 680));
   }
 }
-@media screen and (min-width: 1000px) {
+@media (min-width: 1000px) {
   html {
     font-size: 22px;
   }
@@ -196,6 +210,6 @@ a {
     font-size: 48px;
   }
   .chapterTitle {
-    font-size: 64px;
+    font-size: 72px;
   }
 }
