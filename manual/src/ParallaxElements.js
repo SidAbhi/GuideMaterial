@@ -93,9 +93,6 @@ const MainImg = () => {
             }}  styleOuter = {{pointerEvents: 'none'}}>
                 <h1 className = "mainTitle">Guide</h1>
             </Parallax>
-            <Parallax y={ mobileLaxVal(100, -80) } styleInner = { styleBotAlign2(25) }>
-                <BG3 />
-            </Parallax>
             <Parallax y={ mobileLaxVal(0, 0) } styleInner = { styleBotAlign() }>
                 <BG2 />
             </Parallax>
@@ -153,17 +150,15 @@ const Img1 = () => {
         };
     };
 
-    const [scrollAnim , set] = useSpring(() => ({opacity: 0, rotate: 0 }));
-    const [scrollAnim2 , set2] = useSpring(() => ({opacity: 0, rotate: 0 }));
+    const [scrollAnim , set] = useSpring(() => ({ rotate: 0 }));
+    const [scrollAnim2 , set2] = useSpring(() => ({ rotate: 0 }));
 
     const bind = useScroll(
         ({ xy: [, y] }) => {
             set({ 
-                opacity: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,0)[0])*1000/mobileLaxVal3(0,0)[1]), 0), 1000)/1000,
                 rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*50/mobileLaxVal3(0,100)[1]), 0), 1000)/1000  
             });
             set2({
-                opacity: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,0)[0])*1000/mobileLaxVal3(0,0)[1]), 0), 1000)/1000,
                 rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*20/mobileLaxVal3(0,100)[1]), 0), 1000)/1000  
             });
         },
@@ -210,7 +205,7 @@ const Img1 = () => {
                     justifySelf: 'center',
                     alignSelf: 'center'
             }}>
-                <AnimatedData style = { { opacity: scrollAnim.opacity, transform: scrollAnim.rotate.interpolate(rotate => `rotate(-${rotate}turn)`) } } />
+                <AnimatedData style = { { transform: scrollAnim.rotate.interpolate(rotate => `rotate(-${rotate}turn)`) } } />
             </Parallax>
             <Parallax y={ mobileLaxVal2(500, -450) } 
                 styleOuter = {{
@@ -229,7 +224,7 @@ const Img1 = () => {
                     height: mobileLaxVal(30),
                     alignSelf: 'center'
             }}>
-                <AnimatedPen style = { { opacity: scrollAnim2.opacity, transform: scrollAnim2.rotate.interpolate(rotate => `rotate(${rotate}turn)`) } } />
+                <AnimatedPen style = { { transform: scrollAnim2.rotate.interpolate(rotate => `rotate(${rotate}turn)`) } } />
             </Parallax>
         </div>
     );
