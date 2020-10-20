@@ -31,6 +31,7 @@ a {
 }
 
 cite {
+  display: inline;
   text-decoration: underline dotted #F9A846;
 }
 
@@ -201,7 +202,7 @@ cite {
 
 @media (min-width: 320px) {
   html {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(16px + 2 * ((100vw - 320px) / 680));
   }
   .quote {
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));

@@ -3,6 +3,10 @@ import { animated, useSpring } from 'react-spring';
 import { useInView } from 'react-intersection-observer';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { inlinePositioning, animateFill } from 'tippy.js';
+import 'tippy.js/dist/backdrop.css';
+import 'tippy.js/animations/shift-away.css';
+
 
 //Text content
 
@@ -43,10 +47,17 @@ const LatarBelakang = () => {
         <div className = "contentLB">
             <h2>Strengths</h2>
             <p>Landasan utama aspek kekuatan dalam SAPA adalah konsep <i>strengths</i> yang diteliti dan dikembangkan oleh&nbsp;
-            <Tippy content={<span>Peterson, C., & Seligman, M. E. (2004). <i>Character strengths and virtues: A handbook and classification</i> (Vol. 1). Oxford University Press.</span>}>
+            <Tippy 
+            plugins = { [inlinePositioning, animateFill] }
+            animateFill = {true}
+            inlinePositioning = {true}
+            interactiveDebounce = {30}
+            interactiveBorder = {30}
+            interactive = {true}
+            content = {<span>Peterson, C., & Seligman, M. E. (2004). <i>Character strengths and virtues: A handbook and classification</i> (Vol. 1). Oxford University Press.</span>}>
                 <cite>Peterson dan Seligman (2004)</cite>
             </Tippy>. Dalam bukunya, <i>Character Strengths and Virtues</i> (CSV), Peterson dan Seligman meneliti, menganalisa, dan mengklasifikasikan sifat positif/kekuatan manusia. Dalam usahanya, Peterson dan Seligman membangun salah satu dasar psikologi positif dengan berfokus pada aspek positif manusia melalui kekuatan dan kebaikannya. </p>
-            <p>CSV tidak menentukan apa yang dianggap baik dalam manusia, melainkan hanya menggambarkan apa yang sudah ada di berbagai budaya, negara, dan kepercayaan. Sehingga CSV tidak menentukan apa yang harus dimiliki oleh manusia untuk memperbaiki atau mengembangkan dirinya, melainkan menjelaskan dan mengklasifikasikan kekuatan dan kebaikan yang ada di manusia.</p>
+            <p>CSV tidak menentukan apa yang dianggap baik dalam manusia, melainkan hanya menggambarkan apa yang sudah ada di berbagai budaya, negara, dan kepercayaan. Sehingga CSV tidak menentukan apa yang harus dimiliki oleh manusia untuk memperbaiki atau mengembangkan dirinya, melainkan menjelaskan dan mengk<wbr/>lasifikasikan kekuatan dan kebaikan yang ada di manusia.</p>
             <p>Dalam Guide yang kami berikan, kekuatan-kekuatan ini akan direview apa yang sudah diketahui secara ilmiah mengenai masing-masing kekuatan dalam beberapa aspek seperti: </p>
             <ul className = "txtList">
                 <li>Definisi</li>
