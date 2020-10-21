@@ -46,7 +46,7 @@ const LatarBelakang = () => {
     return (
         <div className = "contentLB">
             <h2>Strengths</h2>
-            <p>Landasan utama aspek kekuatan dalam SAPA adalah konsep <i>strengths</i> yang diteliti dan dikembangkan oleh&nbsp;
+            <p>Landasan aspek kekuatan dalam SAPA adalah konsep <i>strengths</i> yang diteliti dan dikembangkan oleh&nbsp;
             <Tippy 
             plugins = { [inlinePositioning, animateFill] }
             animateFill = {true}
@@ -58,7 +58,28 @@ const LatarBelakang = () => {
                 <cite>Peterson dan Seligman (2004)</cite>
             </Tippy>. Dalam bukunya, <i>Character Strengths and Virtues</i> (CSV), Peterson dan Seligman meneliti, menganalisa, dan mengklasifikasikan sifat positif/kekuatan manusia. Dalam usahanya, Peterson dan Seligman membangun salah satu dasar psikologi positif dengan berfokus pada aspek positif manusia melalui kekuatan dan kebaikannya. </p>
             <p>CSV tidak menentukan apa yang dianggap baik dalam manusia, melainkan hanya menggambarkan apa yang sudah ada di berbagai budaya, negara, dan kepercayaan. Sehingga CSV tidak menentukan apa yang harus dimiliki oleh manusia untuk memperbaiki atau mengembangkan dirinya, melainkan menjelaskan dan mengk<wbr/>lasifikasikan kekuatan dan kebaikan yang ada di manusia.</p>
-            <p>Dalam Guide yang kami berikan, kekuatan-kekuatan ini akan direview apa yang sudah diketahui secara ilmiah mengenai masing-masing kekuatan dalam beberapa aspek seperti: </p>
+            <p>SAPA berusaha mengklasifikasikan ulang kekuatan-kekuatan yang sudah dijelaskan dengan menambahkan dan mengubah apa yang sudah dijelaskan dalam CSV, VIA-IS, dan Clifton Strengthsfinder&nbsp;
+            <Tippy 
+            plugins = { [inlinePositioning, animateFill] }
+            animateFill = {true}
+            inlinePositioning = {true}
+            interactiveDebounce = {30}
+            interactiveBorder = {30}
+            interactive = {true}
+            content = {<span>Peterson, C., & Seligman, M. E. (2006). The values in action (VIA) classification of strengths. <i>A life worth living: Contributions to positive psychology</i>, 29-48.</span>}>
+                <cite>(Peterson & Seligman, 2006;&nbsp;</cite>
+            </Tippy>
+            <Tippy 
+            plugins = { [inlinePositioning, animateFill] }
+            animateFill = {true}
+            inlinePositioning = {true}
+            interactiveDebounce = {30}
+            interactiveBorder = {30}
+            interactive = {true}
+            content = {<span>Asplund, J., Lopez, S. J., Hodges, T., & Harter, J. (2007). The Clifton StrengthsFinder 2.0 technical report: Development and validation. <i>The Gallup Organization, Princeton, NJ.</i></span>}>
+                <cite>Asplund et al., 2007)</cite>
+            </Tippy>. Kemudian mengintegrasikannya dengan konsep dan teori kepribadian.</p>
+            <p>Dalam Guide yang kami berikan, akan direview apa yang sudah diketahui secara ilmiah mengenai masing-masing kekuatan dalam beberapa aspek seperti: </p>
             <ul className = "txtList">
                 <li>Definisi</li>
                 <li>Korelasi dan konsekuensi kekuatan</li>
@@ -66,7 +87,7 @@ const LatarBelakang = () => {
                 <li>Referensi</li>
             </ul>
             <h2>Personality</h2>
-            
+            <p>Kepribadian adalah salah satu topik yang paling banyak dikaji dan diteliti dalam bidang psikologi. </p>
         </div>
         );
 };

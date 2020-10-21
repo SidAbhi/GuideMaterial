@@ -149,7 +149,7 @@ cite {
 }
 
 .contentLB {
-  margin: -5vh 5vh 0vh 5vh;
+  margin: -5vh 10vh 0vh 5vh;
 }
 
 .txtList {
@@ -202,7 +202,7 @@ cite {
 
 @media (min-width: 320px) {
   html {
-    font-size: calc(16px + 2 * ((100vw - 320px) / 680));
+    font-size: calc(16px + 1 * ((100vw - 320px) / 680));
   }
   .quote {
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));
@@ -213,7 +213,7 @@ cite {
 }
 @media (min-width: 1000px) {
   html {
-    font-size: 22px;
+    font-size: 20px;
   }
   .quote {
     font-size: 48px;
