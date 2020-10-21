@@ -79,15 +79,26 @@ const LatarBelakang = () => {
             content = {<span>Asplund, J., Lopez, S. J., Hodges, T., & Harter, J. (2007). The Clifton StrengthsFinder 2.0 technical report: Development and validation. <i>The Gallup Organization, Princeton, NJ.</i></span>}>
                 <cite>Asplund et al., 2007)</cite>
             </Tippy>. Kemudian mengintegrasikannya dengan konsep dan teori kepribadian.</p>
-            <p>Dalam Guide yang kami berikan, akan direview apa yang sudah diketahui secara ilmiah mengenai masing-masing kekuatan dalam beberapa aspek seperti: </p>
-            <ul className = "txtList">
-                <li>Definisi</li>
-                <li>Korelasi dan konsekuensi kekuatan</li>
-                <li>Pengembangan kekuatan</li>
-                <li>Referensi</li>
-            </ul>
             <h2>Personality</h2>
-            <p>Kepribadian adalah salah satu topik yang paling banyak dikaji dan diteliti dalam bidang psikologi. </p>
+            <p>Kepribadian adalah salah satu topik yang paling banyak dikaji dan diteliti dalam bidang psikologi. Banyak teori dan model yang muncul dan berkembang, tetapi dalam teori kepribadian modern salah satu kerangka dan model yang digunakan dan sudah paling banyak diteliti adalah teori Big Five yang dikembangkan oleh&nbsp; 
+            <Tippy 
+            plugins = { [inlinePositioning, animateFill] }
+            animateFill = {true}
+            inlinePositioning = {true}
+            interactiveDebounce = {30}
+            interactiveBorder = {30}
+            interactive = {true}
+            content = {<span>Costa, P. T., & McCrae, R. R. (1992). Normal personality assessment in clinical practice: The NEO Personality Inventory. <i>Psychological assessment</i>, 4(1), 5.</span>}>
+                <cite>Costa dan McCrae (1992)</cite>
+            </Tippy>. Model kepribadian ini adalah model kepribadian yang paling banyak digunakan untuk menggambarkan bagaimana seseorang berinteraksi dengan dunianya.</p>
+            <p>Dalam model ini kepribadian dibagi menjadi lima dimensi besar (Big Five) yang terdiri dari:</p>
+            <ul className = "txtList">
+                <li><b>Openness</b> : keterbukaan seseorang secara emosional, menerima pengalaman baru, ide baru, keingintahuan, dan kesenian.</li>
+                <li><b>Conscientiousness</b> : terkait dengan kedisiplinan, kepatuhan, tugas, dan pekerjaan.</li>
+                <li><b>Extraversion</b> : </li>
+                <li><b>Agreeable</b> : </li>
+                <li><b>Neuroticism</b> : </li>
+            </ul>
         </div>
         );
 };

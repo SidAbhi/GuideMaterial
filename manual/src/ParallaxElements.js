@@ -232,17 +232,13 @@ const Img1 = () => {
 
 const BannerLB = () => {
     const mediaQ = useMediaQuery({ query: '(max-width: 770px)' });
-    const reponsiveHeight = () => mediaQ ? '50vh' : '80vh';
+    const reponsiveHeight = () => mediaQ ? '40vh' : '40vh';
     return (
         <ParallaxBanner className = "laxBannerLB" 
         layers = {[
             {
-                image: './images/BG4.svg',
-                amount: 0.6,
-            },
-            {
                 children: <LBTitle />,
-                amount: -0.3,
+                amount: -0.4,
                 expanded: false,
             },
         ]}
