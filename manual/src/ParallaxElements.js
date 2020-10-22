@@ -5,7 +5,6 @@ import { useMediaQuery } from 'react-responsive';
 import { animated, useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
 import { LBTitle } from './Content.js';
-import { ReactComponent as BG3} from './images/BG2.svg';
 import { ReactComponent as BG1} from './images/BG1.svg';
 import { ReactComponent as Pen} from './images/Pen.svg';
 import { ReactComponent as BG2 } from './images/ManualIllust1.svg';
@@ -236,6 +235,11 @@ const BannerLB = () => {
     return (
         <ParallaxBanner className = "laxBannerLB" 
         layers = {[
+            {
+                image: '/images/TopoBG-8.png',
+                amount: 0.4,
+                expanded: true,
+            },
             {
                 children: <LBTitle />,
                 amount: -0.4,

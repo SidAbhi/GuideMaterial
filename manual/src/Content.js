@@ -1,6 +1,4 @@
 import React from 'react';
-import { animated, useSpring } from 'react-spring';
-import { useInView } from 'react-intersection-observer';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { inlinePositioning, animateFill } from 'tippy.js';
@@ -93,9 +91,9 @@ const LatarBelakang = () => {
             </Tippy>. Model kepribadian ini adalah model kepribadian yang paling banyak digunakan untuk menggambarkan bagaimana seseorang berinteraksi dengan dunianya.</p>
             <p>Dalam model ini kepribadian dibagi menjadi lima dimensi besar (Big Five) yang terdiri dari:</p>
             <ul className = "txtList">
-                <li><b>Openness</b> : keterbukaan seseorang secara emosional, menerima pengalaman baru, ide baru, keingintahuan, dan kesenian.</li>
-                <li><b>Conscientiousness</b> : terkait dengan kedisiplinan, kepatuhan, tugas, dan pekerjaan.</li>
-                <li><b>Extraversion</b> : </li>
+                <li><b>Openness</b> : dimensi kepribadian yang menggambarkan keterbukaan seseorang secara emosional, menerima pengalaman baru, ide baru, keingintahuan, dan kesenian.</li>
+                <li><b>Conscientiousness</b> : dimensi kepribadian yang berkaitan dengan kedisiplinan, kepatuhan, tugas, dan pekerjaan.</li>
+                <li><b>Extraversion</b> : dimensi kepribadian yang mengukur keaktifan, keasertifan, banyak energi, dan senang banyak bersosialisasi.</li>
                 <li><b>Agreeable</b> : </li>
                 <li><b>Neuroticism</b> : </li>
             </ul>
