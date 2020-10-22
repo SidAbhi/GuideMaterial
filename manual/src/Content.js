@@ -94,8 +94,8 @@ const LatarBelakang = () => {
                 <li><b>Openness</b> : dimensi kepribadian yang menggambarkan keterbukaan seseorang secara emosional, menerima pengalaman baru, ide baru, keingintahuan, dan kesenian.</li>
                 <li><b>Conscientiousness</b> : dimensi kepribadian yang berkaitan dengan kedisiplinan, kepatuhan, tugas, dan pekerjaan.</li>
                 <li><b>Extraversion</b> : dimensi kepribadian yang mengukur keaktifan, keasertifan, banyak energi, dan senang banyak bersosialisasi.</li>
-                <li><b>Agreeable</b> : </li>
-                <li><b>Neuroticism</b> : </li>
+                <li><b>Agreeable</b> : dimensi kepribadian yang menggambarkan aspek seperti kesopanan, kebaikan, keramahan, dan aspek prososial lainnya. </li>
+                <li><b>Neuroticism</b> : dimensi kepribadian yang menunjukkan kerentanan terhadap kecemasan, depresi, stress, dan emosi negatif lainnya.</li>
             </ul>
         </div>
         );
