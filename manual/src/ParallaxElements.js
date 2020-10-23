@@ -255,4 +255,5 @@ const BannerLB = () => {
     );
 };
 
+
 export { MainImg, Img1, BannerLB }

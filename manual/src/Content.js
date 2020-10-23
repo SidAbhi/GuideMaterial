@@ -4,32 +4,26 @@ import 'tippy.js/dist/tippy.css';
 import { inlinePositioning, animateFill } from 'tippy.js';
 import 'tippy.js/dist/backdrop.css';
 import 'tippy.js/animations/shift-away.css';
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from 'react-spring';
 
 
 //Text content
 
-/*
 const OpenQuote = () => {
-    //anim settings
-    const [changeColor, set] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
-    //intersection observer 
-    const {ref: changeBold, inView} = useInView({ threshold: 1});
-    //sets new value and triggers the anim
-    const quoteVis = () => {
-        inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
-        return (changeColor.bg);
-    };
-    let i = 0
+        //anim settings
+        const [changeColor, set] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
+        //intersection observer 
+        const {ref: changeBold, inView} = useInView({ threshold: 1});
+        //sets new value and triggers the anim
+        const quoteVis = () => {
+            inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
+            return (changeColor.bg);
+        };
+        let i = 0
 
     return (
-        <animated.p ref={changeBold} className = "quote" id="quoteSapa"> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama diciptakan alat ini adalah <animated.b style = {{ color: quoteVis() }}>empowerment</animated.b> dan <animated.b style = {{ color: quoteVis() }}>personal growth</animated.b>.</animated.p>
-        );
-};
-*/
-const OpenQuote = () => {
-
-    return (
-        <p className = "quote" id="quoteSapa"> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <b>empowerment</b> dan <b>personal growth</b>.</p>
+        <animated.p ref={changeBold} className = "quote" id="quoteSapa"> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <animated.b style = {{ color: quoteVis() }}>empowerment</animated.b> dan <animated.b style = {{ color: quoteVis() }}>personal growth</animated.b>.</animated.p>
         );
 };
 
@@ -125,6 +119,13 @@ const LatarBelakang = () => {
             </p>
         </div>
         );
+};
+
+const secondQuote = () => {
+    return (
+        <div className = "secondQuote">
+        </div>
+    );
 };
 
 export { LatarBelakang, OpenQuote, LBTitle};

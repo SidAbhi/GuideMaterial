@@ -19,6 +19,9 @@ const Main = () => {
                     <BannerLB />
                     <LatarBelakang />
                 </div>
+                <div className = "SQBody">
+                    
+                </div>
             </div>
         </div>
     );
