@@ -23,8 +23,11 @@ const OpenQuote = () => {
             return (changeOpacity.opacity);
         };
 
+        quoteBoldOpacity();
+        quoteBoldClr();
+
     return (
-        <animated.p ref={changeBold} className = "quote" id="quoteSapa" style = {{opacity: quoteBoldOpacity()}}> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <animated.b style = {{ color: quoteBoldClr() }}>empowerment</animated.b> dan <animated.b style = {{ color: quoteBoldClr() }}>personal growth</animated.b>.</animated.p>
+        <animated.p ref={changeBold} className = "quote" id="quoteSapa" style = {{opacity: changeOpacity.opacity}}> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <animated.b style = {{ color: changeColor.bg }}>empowerment</animated.b> dan <animated.b style = {{ color: changeColor.bg }}>personal growth</animated.b>.</animated.p>
         );
 };
 
@@ -130,6 +133,5 @@ const SecondQuote = () => {
         </div>
     );
 };
-
 
 export { LatarBelakang, OpenQuote, LBTitle, SecondQuote };

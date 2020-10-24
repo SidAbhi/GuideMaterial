@@ -1,0 +1,1 @@
+export { BannerImg as default } from "../ParallaxElements.js";
