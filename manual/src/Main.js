@@ -10,7 +10,7 @@ const Main = () => {
 
     return (
         <div>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className = "loading">Loading...</div>}>
                 <MainImg />
                 <Img1 />
             </Suspense>

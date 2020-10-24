@@ -9,25 +9,25 @@ import { useSpring, animated } from 'react-spring';
 
 
 //Text content
-
+let i = 0;
 const OpenQuote = () => {
-        const [changeColor, set] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, to: {bg: '#F9A846'}, delay: 150}));
-        const [changeOpacity, set2] = useSpring(() => ({opacity: '0'}));
-        const {ref: changeBold, inView} = useInView({ threshold: .5});
+        const [changeColor, set] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
+        const [changeOpacity, set2] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
+        const {ref: changeBold, inView} = useInView({ threshold: 1, triggerOnce: true });
         const quoteBoldClr = () => {
             inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
-            return (changeColor.bg);
         };
         const quoteBoldOpacity = () => {
-            inView ? set2 ({opacity: '1'}) : set2 ({opacity: '0'});
-            return (changeOpacity.opacity);
+            i++;
+            console.log(i);
+            inView ? set2 ({opacity: 1, transform: [0, 0]}) : set2 ({opacity: 0, transform: [80, 0]});
         };
 
         quoteBoldOpacity();
         quoteBoldClr();
 
     return (
-        <animated.p ref={changeBold} className = "quote" id="quoteSapa" style = {{opacity: changeOpacity.opacity}}> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <animated.b style = {{ color: changeColor.bg }}>empowerment</animated.b> dan <animated.b style = {{ color: changeColor.bg }}>personal growth</animated.b>.</animated.p>
+    <animated.p ref={changeBold} className = "quote" id="quoteSapa" style = {{opacity: changeOpacity.opacity, transform: changeOpacity.transform.interpolate((x,y) => `translate(${x}px, ${y}px)`)}}> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <animated.b style = {{ color: changeColor.bg }}>empowerment</animated.b> dan <animated.b style = {{ color: changeColor.bg }}>personal growth</animated.b>.</animated.p>
         );
 };
 
