@@ -121,11 +121,14 @@ const LatarBelakang = () => {
         );
 };
 
-const secondQuote = () => {
+const SecondQuote = () => {
     return (
         <div className = "secondQuote">
+            <h2 className = "titleSQ">PERMA</h2>
+            <p className = "contentSQ">Proin suscipit luctus est non dapibus. Maecenas pharetra odio commodo augue pharetra, nec imperdiet dolor egestas. Aliquam mollis justo ut lectus iaculis maximus. Aliquam nec ante rutrum, accumsan nibh et, hendrerit lectus. Vestibulum porttitor aliquam nulla quis pretium. Morbi rhoncus erat eget nisl faucibus, vitae sollicitudin risus tempor. Vestibulum egestas risus tellus, venenatis pellentesque elit rutrum eu.</p>
         </div>
     );
 };
 
-export { LatarBelakang, OpenQuote, LBTitle};
+
+export { LatarBelakang, OpenQuote, LBTitle, SecondQuote };

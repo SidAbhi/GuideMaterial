@@ -1,7 +1,7 @@
 import React from "react";
 import { OpenQuote } from "./Content.js";
-import { MainImg, Img1, BannerLB } from './ParallaxElements';
-import { LatarBelakang } from "./Content.js";
+import { MainImg, Img1, BannerLB, BannerImg } from './ParallaxElements';
+import { LatarBelakang, SecondQuote } from "./Content.js";
 
 const Main = () => {
 
@@ -19,8 +19,9 @@ const Main = () => {
                     <BannerLB />
                     <LatarBelakang />
                 </div>
-                <div className = "SQBody">
-                    
+                <div className = "bodySQ">
+                    <BannerImg />
+                    <SecondQuote />
                 </div>
             </div>
         </div>

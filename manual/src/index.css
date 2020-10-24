@@ -144,12 +144,13 @@ cite {
 
 .latarBelakang {
   display: block;
-  margin-bottom: 8%;
+  margin-bottom: 9em;
 }
 
 .laxBannerLB {
   background-color: #F9A846;
   font-family: 'Lato', sans-serif;
+
 }
 
 .contentLB {
@@ -167,10 +168,30 @@ cite {
   font-weight: 900;
 }
 
-.SQBody {
+.bodySQ {
   background-color: #192e42;
   width: 100%;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 7fr 6fr;
+}
+
+.titleSQ {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  color: #f4f4f4;
+}
+
+.contentSQ {
+  font-family: 'Merriweather', serif;
+  font-weight: 500;
+  color: #f4f4f4;
+  margin: 2% 8% 0 0;
+}
+
+.titleSQ {
+  color: #f4f4f4;
+  margin-bottom: .4em;
 }
 
 @media (max-width: 770px) {
@@ -180,9 +201,27 @@ cite {
   }
   .opening {
     width: 85vw;
+    justify-content: center;
   }
   .quote {
     margin-bottom: 15vh;
+  }
+  .bodySQ {
+    display: grid;
+    overflow: visible;
+    grid-template-columns: 1fr;
+  }
+  .secondQuote {
+    position: relative;
+    top: -10%;
+    margin: 0 10% 0 10%;
+    text-align: center;
+  }
+  .titleSQ {
+    margin: 0 0 5% 0;
+  }
+  .contentSQ {
+    margin: 0 0 0 0;
   }
 }
 
@@ -213,6 +252,12 @@ cite {
   .chapterTitle {
     font-size: calc(50px + 25 * ((100vw - 320px) / 680));
   }
+  .contentSQ {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 680));
+  }
+  .titleSQ {
+    font-size: calc(42px + 6 * ((100vw - 320px) / 680));
+  }
 }
 @media (min-width: 1000px) {
   html {
@@ -223,5 +268,11 @@ cite {
   }
   .chapterTitle {
     font-size: 92px;
+  }
+  .contentSQ {
+    font-size: 24px;
+  }
+  .titleSQ {
+    font-size: 64px;
   }
 }

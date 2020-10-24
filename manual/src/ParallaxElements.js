@@ -4,7 +4,7 @@ import { Svganim1, Svganim2, Svganim3 } from './Svganim1';
 import { useMediaQuery } from 'react-responsive';
 import { animated, useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
-import { LBTitle } from './Content.js';
+import { LBTitle, SQTitle } from './Content.js';
 import { ReactComponent as BG1} from './images/BG1.svg';
 import { ReactComponent as Pen} from './images/Pen.svg';
 import { ReactComponent as BG2 } from './images/ManualIllust1.svg';
@@ -90,7 +90,7 @@ const MainImg = () => {
                 height: '100vh',
                 alignContent: 'center',
             }}  styleOuter = {{pointerEvents: 'none'}}>
-                <h1 className = "mainTitle">Guide</h1>
+                <h1 className = "mainTitle">GUIDE</h1>
             </Parallax>
             <Parallax y={ mobileLaxVal(0, 0) } styleInner = { styleBotAlign() }>
                 <BG2 />
@@ -155,10 +155,10 @@ const Img1 = () => {
     const bind = useScroll(
         ({ xy: [, y] }) => {
             set({ 
-                rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*50/mobileLaxVal3(0,100)[1]), 0), 1000)/1000  
+                rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*50/mobileLaxVal3(0,100)[1]), 0), 700)/1000  
             });
             set2({
-                rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*20/mobileLaxVal3(0,100)[1]), 0), 1000)/1000  
+                rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*20/mobileLaxVal3(0,100)[1]), 0), 700)/1000  
             });
         },
         { domTarget: window },
@@ -255,5 +255,49 @@ const BannerLB = () => {
     );
 };
 
+const BannerImg = () => {
+    const mediaQ = useMediaQuery({ query: '(max-width: 770px)' });
+    const reponsiveHeight = () => mediaQ ? '600px' : '110vh';
+    const responsiveWidth = () => mediaQ ? '90%' : '90%';
+    const responsivePosition = () => mediaQ ? '-15%' : '-10%';
 
-export { MainImg, Img1, BannerLB }
+    return (
+        <ParallaxBanner className = "laxBannerImg" 
+        layers = {[
+            {
+                image: '/images/IllustHappyBG2.svg',
+                amount: -.1,
+                expanded: false,
+            },
+            {
+                image: '/images/IllustHappyBG.svg',
+                amount: .05,
+                expanded: false,
+            },
+            {
+                image: '/images/IllustHappyMain.svg',
+                amount: -.3,
+                expanded: false,
+            },
+        ]}
+        style = {{
+            height: reponsiveHeight(),
+            width: responsiveWidth(),
+            color: '#f4f4f4',
+            display: 'flex',
+            justifySelf: 'center',
+            justifyContent: 'center',
+            position: 'relative',
+            top: responsivePosition(),
+            justifySelf: 'center',
+            justifyItems: 'center',
+            backgroundColor: '#F9A846',
+            borderRadius: '18px 18px 18px 18px',
+        }}>
+        </ParallaxBanner>
+        
+    );
+}
+
+
+export { MainImg, Img1, BannerLB, BannerImg }
