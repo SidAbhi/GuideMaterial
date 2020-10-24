@@ -236,7 +236,7 @@ const BannerLB = () => {
         <ParallaxBanner className = "laxBannerLB" 
         layers = {[
             {
-                image: '/images/TopoBG-8.png',
+                image: './images/TopoBG-8.png',
                 amount: 0.4,
                 expanded: true,
             },
@@ -257,27 +257,48 @@ const BannerLB = () => {
 
 const BannerImg = () => {
     const mediaQ = useMediaQuery({ query: '(max-width: 770px)' });
-    const reponsiveHeight = () => mediaQ ? '600px' : '110vh';
+    const mediaQ4K = useMediaQuery({ query: '(min-height: 1200px)'});
+    const reponsiveHeight = () => mediaQ4K ? '100vh' : ( mediaQ ? '600px' : '110vh');
     const responsiveWidth = () => mediaQ ? '90%' : '90%';
-    const responsivePosition = () => mediaQ ? '-15%' : '-10%';
+    const responsivePosition = () => mediaQ4K ? '-5%' : ( mediaQ ? '-15%' : '-10%');
 
     return (
         <ParallaxBanner className = "laxBannerImg" 
         layers = {[
             {
-                image: '/images/IllustHappyBG2.svg',
+                image: './images/IllustHappyBG2.svg',
                 amount: -.1,
-                expanded: false,
+                expanded: true,
             },
             {
-                image: '/images/IllustHappyBG.svg',
+                image: './images/IllustHappyCircle.svg',
+                amount: .1,
+                expanded: true,
+            },
+            {
+                image: './images/IllustHappyBG.svg',
                 amount: .05,
-                expanded: false,
+                expanded: true,
             },
             {
-                image: '/images/IllustHappyMain.svg',
+                image: './images/IllustHappyLight.svg',
+                amount: .08,
+                expanded: true,
+            },
+            {
+                image: './images/IllustHappyMain.svg',
                 amount: -.3,
-                expanded: false,
+                expanded: true,
+            },
+            {
+                image: './images/IllustHappyBubble.svg',
+                amount: -.2,
+                expanded: true,
+            },
+            {
+                image: './images/IllustHappyLightbulb.svg',
+                amount: -.18,
+                expanded: true,
             },
         ]}
         style = {{
