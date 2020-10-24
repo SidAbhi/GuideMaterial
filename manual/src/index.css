@@ -105,6 +105,7 @@ cite {
   margin: 0 auto 0 auto;
   width: 60vw;
   height: fit-content;
+  overflow: hidden;
 }
 
 .article {

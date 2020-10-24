@@ -13,13 +13,11 @@ let i = 0;
 const OpenQuote = () => {
         const [changeColor, set] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
         const [changeOpacity, set2] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
-        const {ref: changeBold, inView} = useInView({ threshold: 1, triggerOnce: true });
+        const {ref: changeBold, inView} = useInView({ threshold: .5, triggerOnce: true, delay: 1500 });
         const quoteBoldClr = () => {
             inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
         };
         const quoteBoldOpacity = () => {
-            i++;
-            console.log(i);
             inView ? set2 ({opacity: 1, transform: [0, 0]}) : set2 ({opacity: 0, transform: [80, 0]});
         };
 

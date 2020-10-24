@@ -2,8 +2,7 @@ import React from "react";
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import { Svganim1, Svganim2, Svganim3 } from './Svganim1';
 import { useMediaQuery } from 'react-responsive';
-import { animated, useSpring } from 'react-spring';
-import { useScroll } from 'react-use-gesture';
+import { animated, useSpring, to } from 'react-spring';
 import { LBTitle } from './Content.js';
 import { ReactComponent as BG1} from './images/BG1.svg';
 import { ReactComponent as Pen} from './images/Pen.svg';
@@ -141,30 +140,8 @@ const Img1 = () => {
         };
     };
 
-    const mobileLaxVal3 = (x, y) => {
-        if(mediaQ) {
-            return [100 + x, 150 + y];
-        } else {
-            return [200 + x, 250 + y];
-        };
-    };
-
-    const [scrollAnim , set] = useSpring(() => ({ rotate: 0 }));
-    const [scrollAnim2 , set2] = useSpring(() => ({ rotate: 0 }));
-
-    const bind = useScroll(
-        ({ xy: [, y] }) => {
-            set({ 
-                rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*50/mobileLaxVal3(0,100)[1]), 0), 700)/1000  
-            });
-            set2({
-                rotate: Math.min(Math.max(parseInt((y-mobileLaxVal3(0,100)[0])*20/mobileLaxVal3(0,100)[1]), 0), 700)/1000  
-            });
-        },
-        { domTarget: window },
-    ); 
-
-    React.useEffect(bind, [bind]);
+    const [ scrollAnim ] = useSpring(() => ({config: { mass: 1250, tension: 14, friction: 440 },from: { rotate: 0 }, to: {rotate: 1}, reset: true}));
+    const [ scrollAnim2 ] = useSpring(() => ({config: { mass: 1250, tension: 14, friction: 440 },from: { rotate: 0 }, to: {rotate: 1}, reset: true}));
     
     return (    
         <div className = "img1">
@@ -229,6 +206,7 @@ const Img1 = () => {
     );
 };
 
+
 const BannerLB = () => {
     const mediaQ = useMediaQuery({ query: '(max-width: 770px)' });
     const reponsiveHeight = () => mediaQ ? '40vh' : '40vh';
@@ -272,7 +250,7 @@ const BannerImg = () => {
             },
             {
                 image: './images/IllustHappyCircle.svg',
-                amount: .1,
+                amount: .35,
                 expanded: true,
             },
             {

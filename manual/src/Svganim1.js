@@ -16,9 +16,7 @@ const Svganim1 = () => {
     const [pathAnim , set] = useSpring(() => ({scroll: 0,}));
 
     const bind = useScroll(
-        ({ xy: [, y] }) => {
-            set({ scroll: Math.min(Math.max(parseInt(y), 0), mobileLaxVal()) });
-        },
+        ({ xy: [, y] }) => set({ scroll: Math.min(Math.max(parseInt(y), 0), mobileLaxVal()) }),
         { domTarget: window },
     ); 
 
