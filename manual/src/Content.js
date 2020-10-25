@@ -6,14 +6,16 @@ import 'tippy.js/dist/backdrop.css';
 import 'tippy.js/animations/shift-away.css';
 import { useInView } from 'react-intersection-observer';
 import { useSpring, animated } from 'react-spring';
+import { useMediaQuery } from 'react-responsive';
 
 
 //Text content
-let i = 0;
 const OpenQuote = () => {
+        const mediaQ = useMediaQuery({ query: '(max-width: 700px), (max-aspect-ratio: 1/1)' });
+        const mobileAnim = () => mediaQ ? [.5, true] : [.7, false];
         const [changeColor, set] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
         const [changeOpacity, set2] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
-        const {ref: changeBold, inView} = useInView({ threshold: .5, triggerOnce: true, delay: 1500 });
+        const {ref: changeBold, inView} = useInView({ threshold: mobileAnim()[0], triggerOnce: mobileAnim()[1], delay: 1500 });
         const quoteBoldClr = () => {
             inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
         };
@@ -126,8 +128,8 @@ const LatarBelakang = () => {
 const SecondQuote = () => {
     return (
         <div className = "secondQuote">
-            <h2 className = "titleSQ">PERMA</h2>
-            <p className = "contentSQ">Proin suscipit luctus est non dapibus. Maecenas pharetra odio commodo augue pharetra, nec imperdiet dolor egestas. Aliquam mollis justo ut lectus iaculis maximus. Aliquam nec ante rutrum, accumsan nibh et, hendrerit lectus. Vestibulum porttitor aliquam nulla quis pretium. Morbi rhoncus erat eget nisl faucibus, vitae sollicitudin risus tempor. Vestibulum egestas risus tellus, venenatis pellentesque elit rutrum eu.</p>
+            <h2 className = "titleSQ">Kenapa kita harus peduli dengan well-being?</h2>
+            <p className = "contentSQ">Individu yang menjalani hidup, bekerja dan belajar sesuai dengan kekuatan dan kebutuhannya akan memiliki hidup yang lebih bahagia, bermakna, dan produktif. Secara sosial, orang dengan well-being yang tinggi dapat membangun dan mempertahankan hubungan yang lebih baik, lebih mudah bekerja sama, lebih suka membantu orang lain. Dalam pekerjaan mereka lebih produktif, lebih mudah menangani masalah, dan bisa lebih baik bekerja tanpa perlu diawasi. Secara kesehatan pun, orang dengan well-being yang baik memiliki daya tahan tubuh yang lebih baik, dan lebih sedikit mengidap penyakit. Walaupun bisa dikatakan bahwa kondisi-kondisi tersebut yang membentuk well-being yang baik, penelitian menunjukkan bahwa well-being dan kondisi-kondisi sebelumnya saling mempengaruhi dan memberikan efek timbal balik.</p>
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import { Svganim1, Svganim2, Svganim3 } from './Svganim1';
 import { useMediaQuery } from 'react-responsive';
-import { animated, useSpring, to } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
 import { LBTitle } from './Content.js';
 import { ReactComponent as BG1} from './images/BG1.svg';
 import { ReactComponent as Pen} from './images/Pen.svg';
@@ -123,14 +123,10 @@ const Img1 = () => {
     const AnimatedData = animated(DataIllust)
     const AnimatedPen = animated(Pen)
     const mediaQ = useMediaQuery({ query: '(max-width: 700px), (max-aspect-ratio: 1/1)' });
+    const mediaQ2 = useMediaQuery({ query: '(max-width: 325px)'})
 
-    const mobileLaxVal = (size) => {
-        if(mediaQ) {
-            return size + '%';
-        } else {
-            return size/2 + '%';
-        };
-    };
+    const responsiveSize = (size) => mediaQ ? size + '%' : size/2 + '%';
+    const responsiveDisableLax = () => mediaQ ? true : false;
 
     const mobileLaxVal2 = (y,z) => {
         if(mediaQ) {
@@ -145,7 +141,7 @@ const Img1 = () => {
     
     return (    
         <div className = "img1">
-            <Parallax y={ mobileLaxVal2(0, 0) } 
+            <Parallax y = {[-100, -300]} disabled = {responsiveDisableLax()}
                 styleOuter = {{
                     position: 'absolute',
                     top: '-40%',
@@ -157,14 +153,14 @@ const Img1 = () => {
                 }}
                 styleInner = {{
                     display: 'grid',
-                    width: mobileLaxVal(80),
-                    height: mobileLaxVal(80),
+                    width: responsiveSize(80),
+                    height: responsiveSize(80),
                     justifySelf: 'center',
                     alignSelf: 'center'
             }}>
                 <Svganim3 />
             </Parallax>
-            <Parallax y={ mobileLaxVal2(100, -50) } 
+            <Parallax y={ mobileLaxVal2(100, -50) }  disabled = {responsiveDisableLax()}
                 styleOuter = {{
                     position: 'absolute',
                     top: '-30%',
@@ -176,14 +172,14 @@ const Img1 = () => {
                 }}
                 styleInner = {{
                     display: 'grid',
-                    width: mobileLaxVal(70),
-                    height: mobileLaxVal(70),
+                    width: responsiveSize(70),
+                    height: responsiveSize(70),
                     justifySelf: 'center',
                     alignSelf: 'center'
             }}>
                 <AnimatedData style = { { transform: scrollAnim.rotate.interpolate(rotate => `rotate(-${rotate}turn)`) } } />
             </Parallax>
-            <Parallax y={ mobileLaxVal2(500, -450) } 
+            <Parallax y = { mobileLaxVal2(500, -450) } disabled = {responsiveDisableLax()}
                 styleOuter = {{
                     position: 'absolute',
                     top: '-30%',
@@ -196,8 +192,8 @@ const Img1 = () => {
                     display: 'grid',
                     position: 'absolute',
                     left: '55%',
-                    width: mobileLaxVal(30),
-                    height: mobileLaxVal(30),
+                    width: responsiveSize(30),
+                    height: responsiveSize(30),
                     alignSelf: 'center'
             }}>
                 <AnimatedPen style = { { transform: scrollAnim2.rotate.interpolate(rotate => `rotate(${rotate}turn)`) } } />

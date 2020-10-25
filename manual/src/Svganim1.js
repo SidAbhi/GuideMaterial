@@ -17,7 +17,10 @@ const Svganim1 = () => {
 
     const bind = useScroll(
         ({ xy: [, y] }) => set({ scroll: Math.min(Math.max(parseInt(y), 0), mobileLaxVal()) }),
-        { domTarget: window },
+        { 
+            bounds: {top: 20, bottom: 20},
+            domTarget: window, 
+        },
     ); 
 
     React.useEffect(bind, [bind]);
