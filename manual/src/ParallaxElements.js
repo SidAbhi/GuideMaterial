@@ -136,8 +136,8 @@ const Img1 = () => {
         };
     };
 
-    const [ scrollAnim ] = useSpring(() => ({config: { mass: 1250, tension: 14, friction: 440 },from: { rotate: 0 }, to: {rotate: 1}, reset: true}));
-    const [ scrollAnim2 ] = useSpring(() => ({config: { mass: 1250, tension: 14, friction: 440 },from: { rotate: 0 }, to: {rotate: 1}, reset: true}));
+    const [ scrollAnim ] = useSpring(() => ({config: { mass: 1250, tension: 14, friction: 440 },from: { rotate: -.3 }, to: {rotate: .2}, reset: true}));
+    const [ scrollAnim2 ] = useSpring(() => ({config: { mass: 1250, tension: 14, friction: 440 },from: { rotate: -.3 }, to: {rotate: .2}, reset: true}));
     
     return (    
         <div className = "img1">

@@ -44,7 +44,6 @@ cite {
 }
 
 .navCircle {
-  background-color: #F9A846;
   position: fixed;
   top: 2.8261vw;
   right: 2.8261vw;
@@ -58,6 +57,7 @@ cite {
 
 .navInner {
   background-color: #F9A846;
+  mix-blend-mode: difference;
   width: 3.125vw;
   height: 3.125vw;
   min-width: 42px;
@@ -73,6 +73,29 @@ cite {
   height: 80%;
   align-self: center;
   justify-self: center;
+}
+
+.navContent {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 4vw;
+  top: 6vw;
+  color: #f4f4f4;
+}
+
+.navLinks {
+  letter-spacing: .03em;
+  padding: 0;
+  list-style-type: none;
+  font-family: 'Lato', sans-serif;
+  font-size: calc(32px + 16 * ((100vw - 320px) / 680));
+  font-weight: 800;
+  margin: 0 0 0 0;
+}
+
+ul.navLinks > li {
+  margin: 0 0 .4em 0;
 }
 
 .loading {
@@ -288,6 +311,9 @@ cite {
   .logo {
     width: 7vh;
     height: 7vh;
+  }
+  .navContent {
+    top: 15vw;
   }
 }
 
