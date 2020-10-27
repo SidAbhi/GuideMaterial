@@ -43,6 +43,38 @@ cite {
   width: 100%;
 }
 
+.navCircle {
+  background-color: #F9A846;
+  position: fixed;
+  top: 2.8261vw;
+  right: 2.8261vw;
+  width: 3.125vw;
+  height: 3.125vw;
+  z-index: 100;
+  min-width: 42px;
+  min-height: 42px;
+  border-radius: 50%;
+}
+
+.navInner {
+  background-color: #F9A846;
+  width: 3.125vw;
+  height: 3.125vw;
+  min-width: 42px;
+  min-height: 42px;
+  border-radius: 50%;
+}
+
+.navButton {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  align-self: center;
+  justify-self: center;
+}
+
 .loading {
   height: 200vh;
 }
@@ -77,8 +109,8 @@ cite {
   height: 20vh;
 }
 
-@media (max-width: 320px) {
-  .img {
+@media (min-width: 320px) and (max-width: 500px) {
+  .img1 {
     margin-bottom: 30%;
   }
 }
@@ -231,7 +263,6 @@ cite {
   }
   .secondQuote {
     position: relative;
-    top: -10%;
     margin: 0 10% 0 10%;
     text-align: center;
   }

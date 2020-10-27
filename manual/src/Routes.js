@@ -2,12 +2,13 @@ import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./Main";
 import Profile from "./Profile";
-import { Nav } from "./Nav";
+import { LogoPlacement, Nav } from "./Nav";
 
 
 const Routes = () => {
   return (
     <Router basename = {process.env.PUBLIC_URL}>
+      <LogoPlacement />
       <Nav />
       <Switch>
         <Route exact path="/" component={Main} />
