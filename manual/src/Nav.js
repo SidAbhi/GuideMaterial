@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { animated, useSpring, to, interpolate } from 'react-spring';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from './images/Logo.svg';
+import { useHover } from 'react-use-gesture';
 import { HashLink } from 'react-router-hash-link';
 
 const LogoPlacement = () => {
@@ -15,13 +16,14 @@ const LogoPlacement = () => {
 const Nav = () => {
     const [open, setOpen] = useState(false);
     const [openDelay, setOpenDelay] = useState(false);
+    const [hoverState, setHoverState] = useState(false)
     const {scale} = useSpring({scale: open ? 100 : 1, config: {tension: open ? 170 : 240, friction: open ? 85 : 82, mass: 8}});
+    const {y} = useSpring({y : open ? 473 : 262.5});
+    const {y2} = useSpring({y2 : open ? 473 : 683.5});
     const {svgX, svgY, svgZ} = useSpring({svgX : open ? -223.7 : 0, 
         svgY : open ? 540 : 0, 
         svgZ: open ? -45 : 0,
     });
-
-    const {y} = useSpring({y : open ? 473 : 262.5});
 
     const {svg2X, svg2Y, svg2Z} = useSpring({svg2X : open ? 540 : 0, 
         svg2Y : open ? -223.7 : 0, 
@@ -29,22 +31,25 @@ const Nav = () => {
     });
 
     const svg = to([svgX, svgY, svgZ], (svgX, svgY, svgZ) => `translate(${svgX} ${svgY}) rotate(${svgZ})`);
-
     const svg2 = to([svg2X, svg2Y, svg2Z], (svg2X, svg2Y, svg2Z) => `translate(${svg2X} ${svg2Y}) rotate(${svg2Z})`);
-
-    const {y2} = useSpring({y2 : open ? 473 : 683.5});
+    const displayNavContent = () => openDelay ? setOpenDelay(false) : setOpenDelay(true);
 
     useEffect(() => {
         open && (document.body.style.overflow = 'hidden');
         !open && (document.body.style.overflow = 'unset');
         }, [open]
     );
-    
-    const displayNavContent = () => openDelay ? setOpenDelay(false) : setOpenDelay(true);
+
+    const hover = useHover(active => {if (open) {
+            console.log('open')
+        } else {
+            console.log('close')
+        }
+    });
 
     const onClick = () => {
         open ? setOpen(false) : setOpen(true);
-        setTimeout(displayNavContent, 300);
+        setTimeout(displayNavContent, 450);
     }
 
     const navContent = () => {
@@ -55,6 +60,7 @@ const Nav = () => {
                         <li>INTRODUCTION</li>
                         <li>STRENGTHS</li>
                         <li>PERSONALITY</li>
+                        <li>LEARN MORE</li>
                     </ul>
                 </div>
             );
@@ -70,7 +76,7 @@ const Nav = () => {
         <animated.div className = "navInner" style ={{scale}}>
         </animated.div>
         {navContent()}
-        <svg onClick = {onClick} className = "navButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+        <svg onClick = {onClick} {...hover()} className = "navButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                 <title>MenuIcon</title>
                 <animated.rect x="137" y={y} width="806" height="134" transform={svg}  fill="#f4f4f4"/>
                 <animated.rect x="137" y={y2} width="806" height="134" transform={svg2} fill="#f4f4f4"/>
