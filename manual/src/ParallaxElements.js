@@ -123,7 +123,6 @@ const Img1 = () => {
     const AnimatedData = animated(DataIllust)
     const AnimatedPen = animated(Pen)
     const mediaQ = useMediaQuery({ query: '(max-width: 700px), (max-aspect-ratio: 1/1)' });
-    const mediaQ2 = useMediaQuery({ query: '(max-width: 325px)'})
 
     const responsiveSize = (size) => mediaQ ? size + '%' : size/2 + '%';
     const responsiveDisableLax = () => mediaQ ? true : false;
