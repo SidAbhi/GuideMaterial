@@ -1,33 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { inlinePositioning, animateFill } from 'tippy.js';
 import 'tippy.js/dist/backdrop.css';
 import 'tippy.js/animations/shift-away.css';
-import { useInView } from 'react-intersection-observer';
 import { useSpring, animated } from 'react-spring';
-import { useMediaQuery } from 'react-responsive';
+import 'intersection-observer';
+import { useIntersectionObserver } from '@researchgate/react-intersection-observer';
 
 
 //Text content
 const OpenQuote = () => {
-        const mediaQ = useMediaQuery({ query: '(max-width: 700px), (max-aspect-ratio: 1/1)' });
-        const mobileAnim = () => mediaQ ? [.5, true] : [.7, false];
+        const [inView, setInView] = useState(false);
         const [changeColor, set] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
         const [changeOpacity, set2] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
-        const {ref: changeBold, inView} = useInView({ threshold: mobileAnim()[0], triggerOnce: mobileAnim()[1], delay: 1500 });
-        const quoteBoldClr = () => {
-            inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
-        };
-        const quoteBoldOpacity = () => {
+        const viewChange = (entry) => {
+            setInView(entry.isIntersecting ? false : true);
             inView ? set2 ({opacity: 1, transform: [0, 0]}) : set2 ({opacity: 0, transform: [80, 0]});
+            inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
+            console.log(inView);
         };
-
-        quoteBoldOpacity();
-        quoteBoldClr();
+        const [changeBold] = useIntersectionObserver(viewChange, {threshold: 0.8});
 
     return (
-    <animated.p ref={changeBold} className = "quote" id="quoteSapa" style = {{opacity: changeOpacity.opacity, transform: changeOpacity.transform.interpolate((x,y) => `translate(${x}px, ${y}px)`)}}> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <animated.b style = {{ color: changeColor.bg }}>empowerment</animated.b> dan <animated.b style = {{ color: changeColor.bg }}>personal growth</animated.b>.</animated.p>
+        <div ref = {changeBold}>
+            <animated.p className = "quote" id="quoteSapa" style = {{opacity: changeOpacity.opacity, transform: changeOpacity.transform.interpolate((x,y) => `translate(${x}px, ${y}px)`)}}> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <animated.b style = {{ color: changeColor.bg }}>empowerment</animated.b> dan <animated.b style = {{ color: changeColor.bg }}>personal growth</animated.b>.</animated.p>
+        </div>
         );
 };
 

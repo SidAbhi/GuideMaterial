@@ -80,7 +80,7 @@ cite {
   width: 100vw;
   height: 100vh;
   left: 4vw;
-  top: 6vw;
+  top: 8vw;
   color: #f4f4f4;
 }
 
@@ -92,11 +92,18 @@ cite {
   font-size: calc(32px + 16 * ((100vw - 320px) / 680));
   font-weight: 800;
   margin: 0 0 0 0;
+  text-align: right;
+  width: 90vw;
 }
 
-ul.navLinks > li {
-  margin: 0 0 .4em 0;
+.navLinksList {
+  margin: 0 0 .4em auto;
   user-select: none; 
+  width: fit-content;
+}
+
+.navLinksList:hover {
+  color: #192e42;
 }
 
 .loading {

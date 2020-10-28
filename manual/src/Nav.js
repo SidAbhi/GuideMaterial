@@ -57,7 +57,6 @@ const Nav = () => {
     const hover = useHover(active => {
         if (!mediaQ) {
             if (open) {
-                console.log(active);
                 active.hovering ? setHoverState(2) : setHoverState(0);
             } else {
                 active.hovering ? setHoverState(1) : setHoverState(0);
@@ -75,10 +74,11 @@ const Nav = () => {
             return (
                 <div className = "navContent">
                     <ul className = "navLinks">
-                        <animated.li style = {linkAnimProps}>INTRODUCTION</animated.li>
-                        <animated.li style = {linkAnimProps}>STRENGTHS</animated.li>
-                        <animated.li style = {linkAnimProps}>PERSONALITY</animated.li>
-                        <animated.li style = {linkAnimProps}>LEARN MORE</animated.li>
+                        <Link onClick = {onClick} className = "navLinksList" to = "/"><animated.li style = {linkAnimProps}>INTRODUCTION</animated.li></Link>
+                        <Link onClick = {onClick} className = "navLinksList" to = "/sapa"><animated.li style = {linkAnimProps}>SAPA</animated.li></Link>
+                        <Link onClick = {onClick} className = "navLinksList" to = "/strengths"><animated.li style = {linkAnimProps}>STRENGTHS</animated.li></Link>
+                        <Link onClick = {onClick} className = "navLinksList" to = "/personality"><animated.li style = {linkAnimProps}>PERSONALITY</animated.li></Link>
+                        <Link onClick = {onClick} className = "navLinksList" to = "/learn"><animated.li style = {linkAnimProps}>LEARN MORE</animated.li></Link>
                     </ul>
                 </div>
             );

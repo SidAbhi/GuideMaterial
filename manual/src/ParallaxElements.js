@@ -135,8 +135,7 @@ const Img1 = () => {
         };
     };
 
-    const [ scrollAnim ] = useSpring(() => ({config: { mass: 1250, tension: 14, friction: 440 },from: { rotate: -.3 }, to: {rotate: .2}, reset: true}));
-    const [ scrollAnim2 ] = useSpring(() => ({config: { mass: 1250, tension: 14, friction: 440 },from: { rotate: -.3 }, to: {rotate: .2}, reset: true}));
+    const { rotate } = useSpring({config: { mass: 1250, tension: 14, friction: 440 }, loop: true, from: {rotate: 0}, to: {rotate: 180} });
     
     return (    
         <div className = "img1">
@@ -176,7 +175,7 @@ const Img1 = () => {
                     justifySelf: 'center',
                     alignSelf: 'center'
             }}>
-                <AnimatedData style = { { transform: scrollAnim.rotate.interpolate(rotate => `rotate(-${rotate}turn)`) } } />
+                <AnimatedData style = {{rotate}} />
             </Parallax>
             <Parallax y = { mobileLaxVal2(500, -450) } disabled = {responsiveDisableLax()}
                 styleOuter = {{
@@ -195,7 +194,7 @@ const Img1 = () => {
                     height: responsiveSize(30),
                     alignSelf: 'center'
             }}>
-                <AnimatedPen style = { { transform: scrollAnim2.rotate.interpolate(rotate => `rotate(${rotate}turn)`) } } />
+                <AnimatedPen style = {{rotate}} />
             </Parallax>
         </div>
     );
