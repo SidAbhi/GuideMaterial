@@ -1,1 +1,1 @@
-export { BannerLB as default } from "../ParallaxElements.js";
+export { BannerLB as default } from "../components/main/ParallaxElements.js";

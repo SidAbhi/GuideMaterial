@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
-import { OpenQuote } from "./Content.js";
-import { LatarBelakang, SecondQuote } from "./Content.js";
+import { OpenQuote } from "./components/Content.js";
+import { LatarBelakang, SecondQuote } from "./components/Content.js";
 
 const Main = () => {
     const MainImg = React.lazy(() => import('./lazy proxy/MainImg.js'));

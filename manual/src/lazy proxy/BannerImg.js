@@ -1,1 +1,1 @@
-export { BannerImg as default } from "../ParallaxElements.js";
+export { BannerImg as default } from "../components/main/ParallaxElements.js";

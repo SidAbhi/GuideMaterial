@@ -3,11 +3,11 @@ import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import { Svganim1, Svganim2, Svganim3 } from './Svganim1';
 import { useMediaQuery } from 'react-responsive';
 import { animated, useSpring } from 'react-spring';
-import { LBTitle } from './Content.js';
-import { ReactComponent as BG1} from './images/BG1.svg';
-import { ReactComponent as Pen} from './images/Pen.svg';
-import { ReactComponent as BG2 } from './images/ManualIllust1.svg';
-import { ReactComponent as DataIllust} from './images/Data1.svg';
+import { LBTitle } from '../Content.js';
+import { ReactComponent as BG1} from '../../images/BG1.svg';
+import { ReactComponent as Pen} from '../../images/Pen.svg';
+import { ReactComponent as BG2 } from '../../images/ManualIllust1.svg';
+import { ReactComponent as DataIllust} from '../../images/Data1.svg';
 
 const MainImg = () => {
     //Device check
@@ -135,7 +135,7 @@ const Img1 = () => {
         };
     };
 
-    const { rotate } = useSpring({config: { mass: 1250, tension: 14, friction: 440 }, loop: true, from: {rotate: 0}, to: {rotate: 180} });
+    const { rotate } = useSpring({config: { mass: 1250, tension: 14, friction: 440 }, loop: true, from: {rotate: 0}, to: {rotate: 360} });
     
     return (    
         <div className = "img1">
@@ -199,7 +199,6 @@ const Img1 = () => {
         </div>
     );
 };
-
 
 const BannerLB = () => {
     const mediaQ = useMediaQuery({ query: '(max-width: 770px)' });

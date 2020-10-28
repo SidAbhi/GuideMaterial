@@ -12,8 +12,8 @@ import { useIntersectionObserver } from '@researchgate/react-intersection-observ
 //Text content
 const OpenQuote = () => {
         const [inView, setInView] = useState(false);
-        const [changeColor, set] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
-        const [changeOpacity, set2] = useSpring(() => ({config: {mass: 1, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
+        const [changeColor, set] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
+        const [changeOpacity, set2] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
         const viewChange = (entry) => {
             setInView(entry.isIntersecting ? false : true);
             inView ? set2 ({opacity: 1, transform: [0, 0]}) : set2 ({opacity: 0, transform: [80, 0]});

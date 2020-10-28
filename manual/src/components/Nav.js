@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { animated, useSpring, to, interpolate } from 'react-spring';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from './images/Logo.svg';
+import { ReactComponent as Logo } from '../images/Logo.svg';
 import { useHover } from 'react-use-gesture';
 import { useMediaQuery } from 'react-responsive';
-import { HashLink } from 'react-router-hash-link';
 
 const LogoPlacement = () => {
     return (
@@ -19,7 +18,8 @@ const Nav = () => {
     const [open, setOpen] = useState(false);
     const [openDelay, setOpenDelay] = useState(false);
     const [hoverState, setHoverState] = useState(0);
-    const {scale} = useSpring({scale: open ? 100 : (hoverState === 1 ? 1.6 : 1), 
+    const {scale,} = useSpring({
+        scale: open ? 100 : (hoverState === 1 ? 1.6 : 1), 
         config: {tension: open ? 170 : 240, 
             friction: open ? 85 : (hoverState === 1 ? 40 : 82), 
             mass: hoverState === 1 ? 1 : 8}});
