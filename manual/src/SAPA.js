@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import './stylesheets/sapa.css'
 import ParallaxCache from './ParallaxCache';
+import { SapaQuote, Results } from "./components/Content.js";
 
 const SAPA = () => {
     const SapaMainImg = React.lazy(() => import('./components/sapa/SapaMainImg'));
@@ -11,6 +12,11 @@ const SAPA = () => {
                 <ParallaxCache />
                 <SapaMainImg />
             </Suspense>
+            <div className = "contentBody">
+                <div className= "opening">
+                    <SapaQuote />
+                </div>
+            </div>    
         </div>
     );
 };

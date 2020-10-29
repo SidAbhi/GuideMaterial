@@ -11,16 +11,16 @@ import { useIntersectionObserver } from '@researchgate/react-intersection-observ
 
 //Text content
 const OpenQuote = () => {
-        const [inView, setInView] = useState(false);
-        const [changeColor, set] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
-        const [changeOpacity, set2] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
-        const viewChange = (entry) => {
-            setInView(entry.isIntersecting ? false : true);
-            inView ? set2 ({opacity: 1, transform: [0, 0]}) : set2 ({opacity: 0, transform: [80, 0]});
-            inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
-            console.log(inView);
-        };
-        const [changeBold] = useIntersectionObserver(viewChange, {threshold: 0.8});
+    const [inView, setInView] = useState(false);
+    const [changeColor, set] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
+    const [changeOpacity, set2] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
+    const viewChange = (entry) => {
+        setInView(entry.isIntersecting ? false : true);
+        inView ? set2 ({opacity: 1, transform: [0, 0]}) : set2 ({opacity: 0, transform: [80, 0]});
+        inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
+        console.log(inView);
+    };
+    const [changeBold] = useIntersectionObserver(viewChange, {threshold: 0.8});
 
     return (
         <div ref = {changeBold}>
@@ -132,4 +132,16 @@ const SecondQuote = () => {
     );
 };
 
-export { LatarBelakang, OpenQuote, LBTitle, SecondQuote };
+const SapaQuote = () => {
+    return (
+        <p className = "quote">Setiap orang memiliki kekuatan dan kelemahannya masing-masing, tetapi seringkali kelemahanlah yang difokuskan. Penelitian menunjukkan bahwa orang akan lebih bahagia dan produktif ketika menguatkan kekuatannya, dan belajar menyiasati kelemahannya.</p>
+    )
+};
+
+const Results = () => {
+    return (
+        <h2 className="chapterTitle">UNDERSTANDING REESULTS</h2>
+    )
+};
+
+export { LatarBelakang, OpenQuote, LBTitle, SecondQuote, Results, SapaQuote };
