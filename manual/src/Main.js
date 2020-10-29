@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { OpenQuote } from "./components/Content.js";
 import { LatarBelakang, SecondQuote } from "./components/Content.js";
+import ParallaxCache from './ParallaxCache';
 
 const Main = () => {
     const MainImg = React.lazy(() => import('./lazy proxy/MainImg.js'));
@@ -10,7 +11,8 @@ const Main = () => {
 
     return (
         <div>
-            <Suspense fallback={<div className = "loading">Loading...</div>}>
+            <Suspense fallback={<div className = "loading bgClr1">Loading...</div>}>
+                <ParallaxCache />
                 <MainImg />
                 <Img1 />
             </Suspense>
@@ -26,7 +28,7 @@ const Main = () => {
                     </Suspense>
                     <LatarBelakang />
                 </div>
-                <div className = "bodySQ">
+                <div className = "bodySQ bgClr2">
                     <Suspense fallback={<div>Loading...</div>}>
                         <BannerImg />
                     </Suspense>

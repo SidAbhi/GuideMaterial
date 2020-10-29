@@ -91,7 +91,7 @@ const Nav = () => {
 
     return (
     <div className = "navCircle">
-        <animated.div className = "navInner" style ={{scale}}>
+        <animated.div className = "navInner bgClr1" style ={{scale}}>
         </animated.div>
         {navContent()}
         <animated.svg onClick = {onClick} {...hover()} className = "navButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">

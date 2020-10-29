@@ -1,13 +1,14 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { LogoPlacement, Nav } from "./components/Nav";
-
+import ScrollToTop from "./ScrollToTop.js";
 
 const Routes = () => {
   const Main = React.lazy(() => import('./Main'));
   const SAPA = React.lazy(() => import('./SAPA'));
   return (
     <Router basename = {process.env.PUBLIC_URL}>
+      <ScrollToTop />
       <LogoPlacement />
       <Nav />
       <Switch>

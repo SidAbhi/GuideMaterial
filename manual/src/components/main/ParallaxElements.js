@@ -77,7 +77,7 @@ const MainImg = () => {
     return (    
         <div className = "mainImg">
             <Parallax y={ mobileLaxVal(0, 0) } styleInner = { styleBotAlign() } styleOuter = {{pointerEvents: 'none'}}>
-                <div className = "mainImgBG"></div>
+                <div className = "mainImgBG bgClr1"></div>
             </Parallax>
             <Parallax y={ mobileLaxVal(60, -40) } styleInner = { styleBotAlign2(-10) }>
                 <BG1 />
@@ -204,7 +204,7 @@ const BannerLB = () => {
     const mediaQ = useMediaQuery({ query: '(max-width: 770px)' });
     const reponsiveHeight = () => mediaQ ? '40vh' : '40vh';
     return (
-        <ParallaxBanner className = "laxBannerLB" 
+        <ParallaxBanner className = "laxBannerLB bgClr1" 
         layers = {[
             {
                 image: './images/TopoBG-8.png',

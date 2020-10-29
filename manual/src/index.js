@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './stylesheets/index.css';
 import Routes from './Routes';
 import * as serviceWorker from './serviceWorker';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import ParallaxCache from './ParallaxCache';
 
 ReactDOM.render(
   <React.StrictMode>
     <ParallaxProvider>
-      <ParallaxCache />
       <Routes />
     </ParallaxProvider>
   </React.StrictMode>,
