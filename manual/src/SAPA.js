@@ -8,11 +8,11 @@ const SAPA = () => {
 
     return (
         <div>
-            <Suspense fallback={<div className = "loading bgClr2">Loading...</div>}>
+            <Suspense fallback={<div className = "loading bg-color-2">Loading...</div>}>
                 <ParallaxCache />
                 <SapaMainImg />
             </Suspense>
-            <div className = "contentBody">
+            <div className = "content-body">
                 <div className= "opening">
                     <SapaQuote />
                 </div>

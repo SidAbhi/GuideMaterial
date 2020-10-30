@@ -11,24 +11,24 @@ const Main = () => {
 
     return (
         <div>
-            <Suspense fallback={<div className = "loading bgClr1">Loading...</div>}>
+            <Suspense fallback={<div className = "loading bg-color-1">Loading...</div>}>
                 <ParallaxCache />
                 <MainImg />
                 <Img1 />
             </Suspense>
-            <div className = "contentBody">
+            <div className = "content-body">
                 <div className = "opening">
                     <div className = "openQuote">
                         <OpenQuote />
                     </div>
                 </div>
-                <div className = "latarBelakang">
+                <div className = "latar-belakang">
                     <Suspense fallback={<div>Loading...</div>}>
                         <BannerLB />
                     </Suspense>
                     <LatarBelakang />
                 </div>
-                <div className = "bodySQ bgClr2">
+                <div className = "body-sq bg-color-2">
                     <Suspense fallback={<div>Loading...</div>}>
                         <BannerImg />
                     </Suspense>

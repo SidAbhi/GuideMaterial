@@ -43,7 +43,7 @@ cite {
   width: 100%;
 }
 
-.navCircle {
+.nav-circle {
   position: fixed;
   top: 2.8261vw;
   right: 2.8261vw;
@@ -55,7 +55,7 @@ cite {
   border-radius: 50%;
 }
 
-.navInner {
+.nav-inner {
   box-shadow: 0 0 5px 2px #613400;
   width: 3.125vw;
   height: 3.125vw;
@@ -64,7 +64,7 @@ cite {
   border-radius: 50%;
 }
 
-.navButton {
+.nav-button {
   position: absolute;
   top: 10%;
   left: 10%;
@@ -74,7 +74,7 @@ cite {
   justify-self: center;
 }
 
-.navContent {
+.nav-content {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -83,7 +83,7 @@ cite {
   color: #f4f4f4;
 }
 
-.navLinks {
+.nav-links {
   letter-spacing: .03em;
   padding: 0;
   list-style-type: none;
@@ -95,13 +95,14 @@ cite {
   width: 90vw;
 }
 
-.navLinksList {
+.nav-links-list {
   margin: 0 0 .4em auto;
+  height: 1.1em;
   user-select: none; 
   width: fit-content;
 }
 
-.navLinksList:hover {
+.nav-links-list:hover {
   color: #192e42;
 }
 
@@ -126,14 +127,6 @@ cite {
   align-items: center;
 }
 
-.nav-links {
-  width: 20%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-}
-
 .img1 {
   position: relative;
   height: 20vh;
@@ -151,7 +144,7 @@ cite {
   }
 }
 
-.contentBody {
+.content-body {
   background-color: #f4f4f4;
 }
 
@@ -167,7 +160,7 @@ cite {
   color: #192e42;
 }
 
-.mainImg {
+.main-img {
   display: flex;
   position: relative;
   top: 0;
@@ -178,7 +171,7 @@ cite {
   pointer-events: none;
 }
 
-.mainTitle {
+.main-title {
   font-family: 'Lato', sans-serif;
   font-weight: 900;
   color: #f4f4f4;
@@ -186,7 +179,7 @@ cite {
   font-size: 20vw;
 }
 
-.mainImgBG {
+.main-img-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -201,57 +194,62 @@ cite {
   margin-bottom: 15vh;
 }
 
-.latarBelakang {
+.quote-sapa {
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+
+.latar-belakang {
   display: block;
   margin-bottom: 9em;
 }
 
-.laxBannerLB {
+.lax-banner-lb {
   font-family: 'Lato', sans-serif;
 }
 
-.contentLB {
+.content-lb {
   margin: 5% 25% 0 25%;
 }
 
-.txtList {
+.txt-list {
   line-height: 1.5em;
 }
 
-.chapterTitle {
+.chapter-title {
   text-align: center;
   letter-spacing: .1em;
   overflow-wrap: break-word;
   font-weight: 900;
 }
 
-.bodySQ {
+.body-sq {
   width: 100%;
   display: grid;
   grid-template-columns: 7fr 6fr;
 }
 
-.titleSQ {
+.title-sq {
   font-family: 'Lato', sans-serif;
   font-weight: 900;
   font-size: 64px;
   color: #f4f4f4;
 }
 
-.contentSQ {
+.content-sq {
   font-family: 'Merriweather', serif;
   font-weight: 500;
   color: #f4f4f4;
   margin: 2% 8% 0 0;
 }
 
-.titleSQ {
+.title-sq {
   color: #f4f4f4;
   margin-bottom: .4em;
 }
 
 @media (max-width: 770px) {
-  .contentLB {
+  .content-lb {
     margin: 7vh auto 0 auto;
     width: 70vw;
   }
@@ -259,23 +257,20 @@ cite {
     width: 85vw;
     justify-content: center;
   }
-  .quote {
-    margin-bottom: 15vh;
-  }
-  .bodySQ {
+  .body-sq {
     display: grid;
     overflow: visible;
     grid-template-columns: 1fr;
   }
-  .secondQuote {
+  .second-quote {
     position: relative;
     margin: 0 10% 0 10%;
     text-align: center;
   }
-  .titleSQ {
+  .title-sq {
     margin: 0 0 5% 0;
   }
-  .contentSQ {
+  .content-sq {
     margin: 0 0 0 0;
   }
 }
@@ -288,14 +283,13 @@ cite {
     align-items: center;
   }
   .nav-links {
-    width: 40%;
     justify-content: left;
   }
   .logo {
     width: 7vh;
     height: 7vh;
   }
-  .navContent {
+  .nav-content {
     top: 15vw;
   }
 }
@@ -307,13 +301,13 @@ cite {
   .quote {
     font-size: calc(24px + 5 * ((100vw - 320px) / 680));
   }
-  .chapterTitle {
+  .chapter-title {
     font-size: calc(50px + 25 * ((100vw - 320px) / 680));
   }
-  .contentSQ {
+  .content-sq {
     font-size: calc(18px + 6 * ((100vw - 320px) / 680));
   }
-  .titleSQ {
+  .title-sq {
     font-size: calc(42px + 6 * ((100vw - 320px) / 680));
   }
 }
@@ -324,21 +318,21 @@ cite {
   .quote {
     font-size: 40px;
   }
-  .chapterTitle {
+  .chapter-title {
     font-size: 92px;
   }
-  .contentSQ {
+  .content-sq {
     font-size: 24px;
   }
-  .titleSQ {
+  .title-sq {
     font-size: 64px;
   }
 }
 
-.bgClr1 {
+.bg-color-1 {
   background-color: #F9A846;
 }
 
-.bgClr2{
+.bg-color-2{
   background-color: #192e42;
 }

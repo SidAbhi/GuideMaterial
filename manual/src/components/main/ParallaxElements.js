@@ -75,9 +75,9 @@ const MainImg = () => {
     };
     
     return (    
-        <div className = "mainImg">
+        <div className = "main-img">
             <Parallax y={ mobileLaxVal(0, 0) } styleInner = { styleBotAlign() } styleOuter = {{pointerEvents: 'none'}}>
-                <div className = "mainImgBG bgClr1"></div>
+                <div className = "main-img-bg bg-color-1"></div>
             </Parallax>
             <Parallax y={ mobileLaxVal(60, -40) } styleInner = { styleBotAlign2(-10) }>
                 <BG1 />
@@ -89,7 +89,7 @@ const MainImg = () => {
                 height: '100vh',
                 alignContent: 'center',
             }}  styleOuter = {{pointerEvents: 'none'}}>
-                <h1 className = "mainTitle">GUIDE</h1>
+                <h1 className = "main-title">GUIDE</h1>
             </Parallax>
             <Parallax y={ mobileLaxVal(0, 0) } styleInner = { styleBotAlign() }>
                 <BG2 />
@@ -204,7 +204,7 @@ const BannerLB = () => {
     const mediaQ = useMediaQuery({ query: '(max-width: 770px)' });
     const reponsiveHeight = () => mediaQ ? '40vh' : '40vh';
     return (
-        <ParallaxBanner className = "laxBannerLB bgClr1" 
+        <ParallaxBanner className = "lax-banner-lb bg-color-1" 
         layers = {[
             {
                 image: './images/TopoBG-8.png',

@@ -144,17 +144,17 @@ const SapaMainImg = () => {
         }
     });
     return (
-        <div className = "mainImgSapa bgClr2">
-            <svg className = "mainImgSapaBG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+        <div className = "main-imgSapa bg-color-2">
+            <svg className = "main-imgSapaBG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                     <path d="M-261,1074C-184.7,934.5,11.7,937.4,49,938c131.2,2,130.1,59.7,288,95,214.4,48,459.6-4,589-60,17.5-7.6,57.1-25.7,114-36,91.8-16.6,166.4-1.6,212,8,108.1,22.8,166.7,35.1,201,79,71.8,91.9,6.4,283.6-84,384-124.7,138.4-266.8,19.2-769,51-241.7,15.3-390.3,52-617-10-160.4-43.8-225.1-100.2-254-166C-300.7,1215.6-294.3,1134.9-261,1074Z" fill="#f4f4f4"/>
-            </svg>
+            ]</svg>
             <Parallax y = {[20, -20]}
             styleInner = {{
                 position: 'absolute',
                 width: '100%',
                 height: '100vh',
             }}>
-                <animated.svg className = "mainImgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+                <animated.svg className = "main-imgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                     <animated.path 
                     d={rangeAnim.to({
                         range: [0, 250, 1000],
@@ -175,13 +175,13 @@ const SapaMainImg = () => {
                 width: '100%',
                 height: '100vh',
             }}>     
-                <svg className="mainImgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+                <svg className="main-imgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                 <animated.rect x={monitorPos2} y="266.1" width="842.5" height = {monitorHeight2} rx="12" fill="#192e42"/>
             </svg>
-                <svg className="mainImgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+                <svg className="main-imgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                 <animated.rect x="138.8" y={monitorPos} width="802.5" height = {monitorHeight} rx="12" fill="#f4f4f4"/>
             </svg>
-                <animated.svg className = "mainImgSapaContent" style = {svgProps} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+                <animated.svg className = "main-imgSapaContent" style = {svgProps} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                 <animated.path 
                 d={rangeAnim2.to({
                     range: [0, 1000],
@@ -193,12 +193,12 @@ const SapaMainImg = () => {
                 })}
                 fill="#A5A5A5"/>
             </animated.svg>
-                <animated.svg style = {{opacity}} className="mainImgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+                <animated.svg style = {{opacity}} className="main-imgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                     <animated.circle cx="918.5" cy={y1} r="8.5" fill="#f9a846"/>
                     <animated.circle cx="895.5" cy={y2} r="8.5" fill="#f9a846"/>
                     <animated.circle cx="872.5" cy={y3} r="8.5" fill="#f9a846"/>
                 </animated.svg>
-                <animated.svg style = {{opacity: opacity2}} className = "mainImgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+                <animated.svg style = {{opacity: opacity2}} className = "main-imgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                     <animated.path transform={xTxt1} d="M367.8,641.7c0,.4-43.1.8-96.2.8s-96.2-.4-96.2-.8,43-.8,96.2-.8S367.8,641.2,367.8,641.7Z" fill="#192e42"/>
                     <animated.path transform={xTxt2} d="M367.8,663c0,.4-43.1.8-96.2.8s-96.2-.4-96.2-.8,43-.9,96.2-.9S367.8,662.5,367.8,663Z" fill="#192e42"/>
                     <animated.path transform={xTxt3} d="M367.8,684.2c0,.5-43.1.9-96.2.9s-96.2-.4-96.2-.9,43-.8,96.2-.8S367.8,683.8,367.8,684.2Z" fill="#192e42"/>
@@ -208,7 +208,7 @@ const SapaMainImg = () => {
                     <animated.path transform={yAva} d="M213.7,522.9a81.4,81.4,0,0,0,106.4,0c-4.4-15.2-15.2-33.2-41.5-37.2,11.4-4.8,19.5-16.6,19.6-30.5.1-18.2-13.7-33-30.8-33.1s-31,14.6-31,32.8c-.1,14.1,8.1,26,19.7,30.8C229.3,489.8,218.3,507.9,213.7,522.9Z" fill="#f9a846"/>
                     <animated.rect transform={xTxt5} x="175.4" y="739.2" width={width1} height="9.05" fill="#f9a846"/>
                 </animated.svg>
-                <animated.svg style = {{opacity: opacity2}} className = "mainImgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+                <animated.svg style = {{opacity: opacity2}} className = "main-imgSapaContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                     <animated.rect x="418" y="404" width={width3} height="28" rx="12" fill="#192e42"/>
                     <animated.rect x="418" y="459" width={width4} height="28" rx="12" fill="#f9a846"/>
                     <animated.rect x="418" y="514" width={width5} height="28" rx="12" fill="#192e42"/>

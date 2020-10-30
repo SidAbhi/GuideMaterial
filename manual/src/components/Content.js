@@ -20,25 +20,25 @@ const OpenQuote = () => {
         inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
         console.log(inView);
     };
-    const [changeBold] = useIntersectionObserver(viewChange, {threshold: 0.8});
+    const [changeBold] = useIntersectionObserver(viewChange, {threshold: 0.5});
 
     return (
         <div ref = {changeBold}>
-            <animated.p className = "quote" id="quoteSapa" style = {{opacity: changeOpacity.opacity, transform: changeOpacity.transform.interpolate((x,y) => `translate(${x}px, ${y}px)`)}}> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <animated.b style = {{ color: changeColor.bg }}>empowerment</animated.b> dan <animated.b style = {{ color: changeColor.bg }}>personal growth</animated.b>.</animated.p>
+            <animated.p className = "quote" id="quoteSapa" style = {{opacity: changeOpacity.opacity, transform: changeOpacity.transform.to((x,y) => `translate(${x}px, ${y}px)`)}}> SAPA adalah alat ukur yang didasari oleh prinsip dan teori psikologi positif, dengan fokus pada kekuatan dan kepribadian seseorang. Tujuan utama menggunakan alat ini adalah sebagai sarana <animated.b style = {{ color: changeColor.bg }}>empowerment</animated.b> dan <animated.b style = {{ color: changeColor.bg }}>personal growth</animated.b>.</animated.p>
         </div>
         );
 };
 
 const LBTitle = () => {
     return (
-        <h2 className = 'chapterTitle'>INTRODUCTION</h2>
+        <h2 className = 'chapter-title'>INTRODUCTION</h2>
     );
 };
 
 const LatarBelakang = () => {
 
     return (
-        <div className = "contentLB">
+        <div className = "content-lb">
             <h2>Strengths</h2>
             <p>
                 Landasan aspek kekuatan dalam SAPA adalah konsep <i>strengths</i> yang diteliti dan dikembangkan oleh&nbsp;
@@ -95,7 +95,7 @@ const LatarBelakang = () => {
             </p>
             <p>
                 Dalam model ini kepribadian dibagi menjadi lima dimensi besar (Big Five) yang terdiri dari:</p>
-                <ul className = "txtList">
+                <ul className = "txt-list">
                     <li><b>Openness</b> : dimensi kepribadian yang menggambarkan keterbukaan seseorang secara emosional, menerima pengalaman baru, ide baru, keingintahuan, dan kesenian.</li>
                     <li><b>Conscientiousness</b> : dimensi kepribadian yang berkaitan dengan kedisiplinan, kepatuhan, tugas, dan pekerjaan.</li>
                     <li><b>Extraversion</b> : dimensi kepribadian yang mengukur keaktifan, keasertifan, banyak energi, dan senang banyak bersosialisasi.</li>
@@ -125,22 +125,37 @@ const LatarBelakang = () => {
 
 const SecondQuote = () => {
     return (
-        <div className = "secondQuote">
-            <h2 className = "titleSQ">Kenapa kita harus peduli dengan well-being?</h2>
-            <p className = "contentSQ">Individu yang menjalani hidup, bekerja dan belajar sesuai dengan kekuatan dan kebutuhannya akan memiliki hidup yang lebih bahagia, bermakna, dan produktif. Secara sosial, orang dengan well-being yang tinggi dapat membangun dan mempertahankan hubungan yang lebih baik, lebih mudah bekerja sama, lebih suka membantu orang lain. Dalam pekerjaan mereka lebih produktif, lebih mudah menangani masalah, dan bisa lebih baik bekerja tanpa perlu diawasi. Secara kesehatan pun, orang dengan well-being yang baik memiliki daya tahan tubuh yang lebih baik, dan lebih sedikit mengidap penyakit. Walaupun bisa dikatakan bahwa kondisi-kondisi tersebut yang membentuk well-being yang baik, penelitian menunjukkan bahwa well-being dan kondisi-kondisi sebelumnya saling mempengaruhi dan memberikan efek timbal balik.</p>
+        <div className = "second-quote">
+            <h2 className = "title-sq">Kenapa kita harus peduli dengan well-being?</h2>
+            <p className = "content-sq">Individu yang menjalani hidup, bekerja dan belajar sesuai dengan kekuatan dan kebutuhannya akan memiliki hidup yang lebih bahagia, bermakna, dan produktif. Secara sosial, orang dengan well-being yang tinggi dapat membangun dan mempertahankan hubungan yang lebih baik, lebih mudah bekerja sama, lebih suka membantu orang lain. Dalam pekerjaan mereka lebih produktif, lebih mudah menangani masalah, dan bisa lebih baik bekerja tanpa perlu diawasi. Secara kesehatan pun, orang dengan well-being yang baik memiliki daya tahan tubuh yang lebih baik, dan lebih sedikit mengidap penyakit. Walaupun bisa dikatakan bahwa kondisi-kondisi tersebut yang membentuk well-being yang baik, penelitian menunjukkan bahwa well-being dan kondisi-kondisi sebelumnya saling mempengaruhi dan memberikan efek timbal balik.</p>
         </div>
     );
 };
 
 const SapaQuote = () => {
+    const [inView, setInView] = useState(false);
+    const [changeColor, set] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
+    const [props, set2] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
+    const viewChange = (entry) => {
+        setInView(entry.isIntersecting ? false : true);
+        inView ? set2 ({opacity: 1, transform: [0, 0]}) : set2 ({opacity: 0, transform: [-80, 0]});
+        inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
+        console.log(inView);
+    };
+    const [quoteChange] = useIntersectionObserver(viewChange, {threshold: 0.5});
+
     return (
-        <p className = "quote">Setiap orang memiliki kekuatan dan kelemahannya masing-masing, tetapi seringkali kelemahanlah yang difokuskan. Penelitian menunjukkan bahwa orang akan lebih bahagia dan produktif ketika menguatkan kekuatannya, dan belajar menyiasati kelemahannya.</p>
+        <div ref = {quoteChange}>
+            <animated.p className = "quote quote-sapa" style = {{opacity: props.opacity, transform: props.transform.to((x,y) => `translate(${x}px, ${y}px)`)}}>
+                Setiap orang memiliki kekuatan dan kelemahannya masing-masing, tetapi seringkali kelemahanlah yang difokuskan. Penelitian dalam psikologi positif menunjukkan bahwa orang akan lebih bahagia dan produktif ketika menguatkan kekuatannya, dan belajar menyiasati kelemahannya.
+            </animated.p>
+        </div>
     )
 };
 
 const Results = () => {
     return (
-        <h2 className="chapterTitle">UNDERSTANDING REESULTS</h2>
+        <h2 className="chapter-title">UNDERSTANDING REESULTS</h2>
     )
 };
 
