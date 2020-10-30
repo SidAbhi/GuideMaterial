@@ -1,6 +1,5 @@
 import React from "react";
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
-import { useMediaQuery } from 'react-responsive';
+import { Parallax } from 'react-scroll-parallax';
 import { animated, useSpring, to } from 'react-spring';
 
 const SapaMainImg = () => {

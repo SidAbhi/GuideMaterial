@@ -13,7 +13,7 @@ import { useIntersectionObserver } from '@researchgate/react-intersection-observ
 const OpenQuote = () => {
     const [inView, setInView] = useState(false);
     const [changeColor, set] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
-    const [changeOpacity, set2] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
+    const [changeOpacity, set2] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, delay: 500, from:{opacity: 0, transform: [-80, 0]}}));
     const viewChange = (entry) => {
         setInView(entry.isIntersecting ? false : true);
         inView ? set2 ({opacity: 1, transform: [0, 0]}) : set2 ({opacity: 0, transform: [80, 0]});
@@ -134,7 +134,7 @@ const SecondQuote = () => {
 
 const SapaQuote = () => {
     const [inView, setInView] = useState(false);
-    const [changeColor, set] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, to: {bg: '#F9A846'}}));
+    const [changeColor, set] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, to: {color: '#F9A846'}}));
     const [props, set2] = useSpring(() => ({config: {mass: 4, tension: 170, friction: 44}, from:{opacity: 0, transform: [-80, 0]}}));
     const viewChange = (entry) => {
         setInView(entry.isIntersecting ? false : true);
@@ -155,7 +155,7 @@ const SapaQuote = () => {
 
 const Results = () => {
     return (
-        <h2 className="chapter-title">UNDERSTANDING REESULTS</h2>
+        <p>Test</p>
     )
 };
 

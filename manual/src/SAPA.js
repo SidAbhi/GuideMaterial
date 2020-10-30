@@ -5,6 +5,7 @@ import { SapaQuote, Results } from "./components/Content.js";
 
 const SAPA = () => {
     const SapaMainImg = React.lazy(() => import('./components/sapa/SapaMainImg'));
+    const BannerUR = React.lazy(() => import('./components/sapa/BannerUR'));
 
     return (
         <div>
@@ -16,6 +17,9 @@ const SAPA = () => {
                 <div className= "opening">
                     <SapaQuote />
                 </div>
+                <Suspense fallback={<div className = "loading">Loading...</div>}>
+                    <BannerUR />
+                </Suspense>
             </div>    
         </div>
     );
