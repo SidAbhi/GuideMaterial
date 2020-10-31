@@ -142,7 +142,7 @@ const SapaQuote = () => {
         inView ? set ({bg: '#F9A846'}) : set ({bg: '#192e42'});
         console.log(inView);
     };
-    const [quoteChange] = useIntersectionObserver(viewChange, {threshold: 0.5});
+    const [quoteChange] = useIntersectionObserver(viewChange, {threshold: 0.3});
 
     return (
         <div ref = {quoteChange}>
@@ -155,7 +155,65 @@ const SapaQuote = () => {
 
 const Results = () => {
     return (
-        <p>Test</p>
+        <div className = "content-lb">
+            <h2>Focusing on the strengths</h2>
+            <p>Sebelum mempelajari bagaimana cara membaca alat ukur SAPA, perlu ditekankan lagi bahwa setiap orang memiliki kekuatannya masing-masing. Dengan berfokus pada kekuatan seseorang, kita bisa membantu mereka menerapkan potensinya secara optimal, mencegah menempatkannya pada pekerjaan dan tugas yang tidak sesuai, dan mendorongnya menjadi lebih bahagia dan produktif. Dengan mereview kekuatan seseorang </p>
+            <p>Mungkin sebagian dari anda ada yang bertanya, "Bukankah semua orang sudah mengetahui apa kekuatannya?" Tetapi penelitian menunjukkan bahwa sekitar 70% orang tidak mengetahui apa kekuatan dan kelebihannya. Di Indonesia sendiri sebagian besar mahasiswa memilih jurusan yang salah, dan banyak orang yang bekerja tidak sesuai dengan dirinya.</p>
+            <p>Untuk melihat apa kekuatannya, pada bagian Strengths kita dapat melihat 5 kekuatan teratasnya dan mendapatkan gambaran yang cukup akurat mengenai kekuatan utama seeseorang.</p>
+            <h2>Learning from the weaknesses</h2>
+            <p>Walaupun kita harus berfokus melihat kekuatan seseorang, tentu saja bukan berarti kita tidak melihat kelemahannya. Penelitian menunjukkan bahwa manusia cenderung lebih mengingat dan dipengaruhi oleh hal-hal yang negatif. Dimana masalah dan pengalaman buruk akan selalu mempengaruhi diri seseorang. Sehingga kita tidak bisa mengabaikan kelemahan juga; dimana jika aspek negatifnya tidak diperhatikan maka kekuatannya pun akan terhambat.</p>
+            <p>Lalu bagaimana kita menyiasati kelemahannya? Kita perlu kemabli lagi ke kekuatan seseorang, karena tiap orang akan punya cara yang optimal untuk menyiasatinya berdasarkan kekuatannya. Tidak ada satu solusi yang cocok untuk semua orang.</p>
+            <p>Agar lebih jelas, kita bisa bayangkan suatu kasus dimana ada seseorang yang bekerja dalam bagian sosial media dengan nilai kekuatan&nbsp; 
+                <Tippy 
+                plugins = { [inlinePositioning, animateFill] }
+                animateFill = {true}
+                inlinePositioning = {true}
+                interactiveDebounce = {30}
+                interactiveBorder = {30}
+                interactive = {true}
+                content = {
+                    <div>
+                        <li>Pintar berbicara</li>
+                        <li>Pintar merangkai kata-kata</li>
+                        <li>Baik dalam berkomunikasi</li>
+                    </div>
+                }>
+                    <cite>Articulate</cite> 
+                </Tippy> 
+                &nbsp;yang rendah. Tentunya jika kita berfokus pada kelemahannya, kemampuan komunikasi yang rendah ini bisa menjadi hambatan dalam pekerjaannya. Tetapi jika kita melihat kekuatannya, kita bisa mencari cara menyiasati kelemahannya. Misalnya dalam kasus ini kekuatannya di antaranya adalah &nbsp; 
+                <Tippy 
+                plugins = { [inlinePositioning, animateFill] }
+                animateFill = {true}
+                inlinePositioning = {true}
+                interactiveDebounce = {30}
+                interactiveBorder = {30}
+                interactive = {true}
+                content = {
+                    <div>
+                        <li>Mampu melihat dan memilah langkah ke depan</li>
+                        <li>Dapat melihat situasi dan masalah dengan lebih terstruktur</li>
+                    </div>
+                }>
+                    <cite>Strategic</cite> 
+                </Tippy> dan&nbsp;
+                <Tippy 
+                plugins = { [inlinePositioning, animateFill] }
+                animateFill = {true}
+                inlinePositioning = {true}
+                interactiveDebounce = {30}
+                interactiveBorder = {30}
+                interactive = {true}
+                content = {
+                    <div>
+                        <li>Pintar menimbangkan resiko</li>
+                        <li>Hati-hati dalam bertindak</li>
+                        <li>Mempertimbangkan banyak hal sebelum melangkah</li>
+                    </div>
+                }>
+                    <cite>Careful</cite> 
+                </Tippy> 
+                . Dengan kekuatannya ini kita bisa menempatkan orang ini dalam bagian pengembangan strategi sosial media, tetapi tanpa perlu berinteraksi dan memanage langsung akun sosial medianya.</p>
+        </div>
     )
 };
 

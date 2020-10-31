@@ -8,7 +8,7 @@ const BannerUR = () => {
 
     const URTitle = () => {
         return (
-            <h2 className="chapter-title">INTERPRETATING THE RESULTS</h2>
+            <h2 className="chapter-title">INTERPRETING THE RESULTS</h2>
         )
     };
 

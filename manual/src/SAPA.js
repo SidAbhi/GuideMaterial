@@ -20,6 +20,7 @@ const SAPA = () => {
                 <Suspense fallback={<div className = "loading">Loading...</div>}>
                     <BannerUR />
                 </Suspense>
+                <Results />
             </div>    
         </div>
     );
