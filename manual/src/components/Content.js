@@ -147,7 +147,7 @@ const SapaQuote = () => {
     return (
         <div ref = {quoteChange}>
             <animated.p className = "quote quote-sapa" style = {{opacity: props.opacity, transform: props.transform.to((x,y) => `translate(${x}px, ${y}px)`)}}>
-                Setiap orang memiliki kekuatan dan kelemahannya masing-masing, tetapi seringkali kelemahanlah yang difokuskan. Penelitian dalam psikologi positif menunjukkan bahwa orang akan lebih bahagia dan produktif ketika menguatkan kekuatannya, dan belajar menyiasati kelemahannya.
+                Setiap orang memiliki kekuatan dan kelemahannya masing-masing, tetapi seringkali kelemahanlah yang difokuskan. Penelitian dalam psikologi positif menunjukkan bahwa orang akan lebih bahagia dan produktif ketika <animated.b style = {{ color: changeColor.color }}>mengembangkan</animated.b> kekuatannya, dan belajar <animated.b style = {{ color: changeColor.color }}>menyiasati</animated.b>  kelemahannya.
             </animated.p>
         </div>
     )
@@ -156,11 +156,11 @@ const SapaQuote = () => {
 const Results = () => {
     return (
         <div className = "content-lb">
-            <h2>Focusing on the strengths</h2>
+            <h2>Fokus pada kekuatan</h2>
             <p>Sebelum mempelajari bagaimana cara membaca alat ukur SAPA, perlu ditekankan lagi bahwa setiap orang memiliki kekuatannya masing-masing. Dengan berfokus pada kekuatan seseorang, kita bisa membantu mereka menerapkan potensinya secara optimal, mencegah menempatkannya pada pekerjaan dan tugas yang tidak sesuai, dan mendorongnya menjadi lebih bahagia dan produktif. Dengan mereview kekuatan seseorang </p>
             <p>Mungkin sebagian dari anda ada yang bertanya, "Bukankah semua orang sudah mengetahui apa kekuatannya?" Tetapi penelitian menunjukkan bahwa sekitar 70% orang tidak mengetahui apa kekuatan dan kelebihannya. Di Indonesia sendiri sebagian besar mahasiswa memilih jurusan yang salah, dan banyak orang yang bekerja tidak sesuai dengan dirinya.</p>
             <p>Untuk melihat apa kekuatannya, pada bagian Strengths kita dapat melihat 5 kekuatan teratasnya dan mendapatkan gambaran yang cukup akurat mengenai kekuatan utama seeseorang.</p>
-            <h2>Learning from the weaknesses</h2>
+            <h2>Belajar dan siasati kelemahan</h2>
             <p>Walaupun kita harus berfokus melihat kekuatan seseorang, tentu saja bukan berarti kita tidak melihat kelemahannya. Penelitian menunjukkan bahwa manusia cenderung lebih mengingat dan dipengaruhi oleh hal-hal yang negatif. Dimana masalah dan pengalaman buruk akan selalu mempengaruhi diri seseorang. Sehingga kita tidak bisa mengabaikan kelemahan juga; dimana jika aspek negatifnya tidak diperhatikan maka kekuatannya pun akan terhambat.</p>
             <p>Lalu bagaimana kita menyiasati kelemahannya? Kita perlu kemabli lagi ke kekuatan seseorang, karena tiap orang akan punya cara yang optimal untuk menyiasatinya berdasarkan kekuatannya. Tidak ada satu solusi yang cocok untuk semua orang.</p>
             <p>Agar lebih jelas, kita bisa bayangkan suatu kasus dimana ada seseorang yang bekerja dalam bagian sosial media dengan nilai kekuatan&nbsp; 
@@ -213,6 +213,11 @@ const Results = () => {
                     <cite>Careful</cite> 
                 </Tippy> 
                 . Dengan kekuatannya ini kita bisa menempatkan orang ini dalam bagian pengembangan strategi sosial media, tetapi tanpa perlu berinteraksi dan memanage langsung akun sosial medianya.</p>
+                <p>Dalam situasi itu kita mengubah kelemahan seseorang agar tidak menghambat kinerja dan produktivitas dirinya dan kelompok. Dengan berfokus pada kekuatannya, orang ini dapat berkontribusi secara maksimal dan tidak mengalami stress karena harus melakukan sesuatu yang sulit baginya.</p>
+                <h2>Signature Strengths</h2>
+                <p>Sebelum melanjutkan ke bagian selanjutnya, ada satu aspek kekuatan yang cukup penting yang tidak dilihat dalam alat ukur ini. Signature strengths adalah kekuatan yang bukan hanya dimiliki seseorang, tetapi juga menjadi bagian dari identitas dan keunikan seseorang. Signature strengths ketika digunakan terasa mudah dilakukan dan juga membuat orang merasa bahagia, terpenuhi, dan membuat orangnya ingin melakukan lagi dan lagi. Dalam alat ini signature strengths tidak diukur langsung, tapi tetap konsep ini perlu dipertimbangkan dalam melihat kekuatan orang dan diri sendiri.</p>
+                <h2>Kekuatan bisa berubah dan berkembang</h2>
+                <p>Hal terakhir yang perlu dipertimbangkan adalah bahwa kekuatan seseorang bisa berubah dan berkembang. Perubahan-perubahan ini bisa terjadi perlahan-lahan maupun dikarenakan ada kejadian signifikan dalam hidup seseorang.</p>
         </div>
     )
 };

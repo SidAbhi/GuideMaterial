@@ -56,7 +56,8 @@ cite {
 }
 
 .nav-inner {
-  box-shadow: 0 0 5px 2px #613400;
+  box-sizing: border-box;
+  border: 4px solid #f4f4f4;
   width: 3.125vw;
   height: 3.125vw;
   min-width: 42px;

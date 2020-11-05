@@ -18,7 +18,7 @@ const Nav = () => {
     const [open, setOpen] = useState(false);
     const [openDelay, setOpenDelay] = useState(false);
     const [hoverState, setHoverState] = useState(0);
-    const {scale,} = useSpring({
+    const {scale} = useSpring({
         scale: open ? 100 : (hoverState === 1 ? 1.6 : 1), 
         config: {tension: open ? 170 : 240, 
             friction: open ? 85 : (hoverState === 1 ? 40 : 82), 
@@ -39,39 +39,29 @@ const Nav = () => {
 
     const linkAnimProps1 = useSpring({
         x: open ? '0em' : '15em', 
-        height: open ? '1.1em' : '0em',  
-        opacity: open ? 1 : 0,
         config: {mass: 2}
     });
 
     const linkAnimProps2 = useSpring({
-        x: open ? '0em' : '15em', 
-        height: open ? '1.1em' : '0em',  
-        opacity: open ? 1 : 0,
+        x: open ? '0em' : '15em',   
         delay: open ? 100 : 25,
         config: {mass: 2}
     });
 
     const linkAnimProps3 = useSpring({
         x: open ? '0em' : '15em', 
-        height: open ? '1.1em' : '0em',  
-        opacity: open ? 1 : 0,
         delay: open ? 200 : 50,
         config: {mass: 2}
     });
 
     const linkAnimProps4 = useSpring({
         x: open ? '0em' : '15em', 
-        height: open ? '1.1em' : '0em',  
-        opacity: open ? 1 : 0,
         delay: open ? 300: 75,
         config: {mass: 2}
     });
 
     const linkAnimProps5 = useSpring({
         x: open ? '0em' : '15em', 
-        height: open ? '1.1em' : '0em',  
-        opacity: open ? 1 : 0,
         delay: open ? 400 :100,
         config: {mass: 2}
     });
@@ -80,12 +70,6 @@ const Nav = () => {
     const svg = to([svgX, svgY, svgZ], (svgX, svgY, svgZ) => `translate(${svgX} ${svgY}) rotate(${svgZ})`);
     const svg2 = to([svg2X, svg2Y, svg2Z], (svg2X, svg2Y, svg2Z) => `translate(${svg2X} ${svg2Y}) rotate(${svg2Z})`);
     const displayNavContent = () => openDelay ? setOpenDelay(false) : setOpenDelay(true);
-
-    useEffect(() => {
-        open && (document.body.style.overflow = 'hidden');
-        !open && (document.body.style.overflow = 'unset');
-        }, [open]
-    );
 
     const hover = useHover(active => {
         if (!mediaQ) {
@@ -102,41 +86,35 @@ const Nav = () => {
         setTimeout(displayNavContent, 200);
     }
 
-    const navContent = () => {
-        if (openDelay) {
-            return (
-                <div className = "nav-content">
-                    <ul className = "nav-links">
-                        <Link onClick = {onClick} className = "nav-links-list" to = "/">
-                            <animated.li style = {linkAnimProps1}>INTRODUCTION</animated.li>
-                        </Link>
-                        <Link onClick = {onClick} className = "nav-links-list" to = "/sapa">
-                            <animated.li style = {linkAnimProps2}>SAPA</animated.li>
-                        </Link>
-                        <Link onClick = {onClick} className = "nav-links-list" to = "/strengths">
-                            <animated.li style = {linkAnimProps3}>STRENGTHS</animated.li>
-                        </Link>
-                        <Link onClick = {onClick} className = "nav-links-list" to = "/personality">
-                            <animated.li style = {linkAnimProps4}>PERSONALITY</animated.li>
-                        </Link>
-                        <Link onClick = {onClick} className = "nav-links-list" to = "/learn">
-                            <animated.li style = {linkAnimProps5}>LEARN MORE</animated.li>
-                        </Link>
-                    </ul>
-                </div>
-            );
-        } else {
-            return (
-                null
-            );
-        };
+    const NavContent = () => {
+        return (
+            <div className = "nav-content" style = {{display: openDelay ? 'flex' : 'none'}}>
+                <ul className = "nav-links">
+                    <Link onClick = {onClick} className = "nav-links-list" to = "/">
+                        <animated.li style = {linkAnimProps1}>INTRODUCTION</animated.li>
+                    </Link>
+                    <Link onClick = {onClick} className = "nav-links-list" to = "/sapa">
+                        <animated.li style = {linkAnimProps2}>SAPA</animated.li>
+                    </Link>
+                    <Link onClick = {onClick} className = "nav-links-list" to = "/strengths">
+                        <animated.li style = {linkAnimProps3}>STRENGTHS</animated.li>
+                    </Link>
+                    <Link onClick = {onClick} className = "nav-links-list" to = "/personality">
+                        <animated.li style = {linkAnimProps4}>PERSONALITY</animated.li>
+                    </Link>
+                    <Link onClick = {onClick} className = "nav-links-list" to = "/learn">
+                        <animated.li style = {linkAnimProps5}>LEARN MORE</animated.li>
+                    </Link>
+                </ul>
+            </div>
+        );
     };
 
     return (
     <div className = "nav-circle">
         <animated.div className = "nav-inner bg-color-1" style ={{scale}}>
         </animated.div>
-        {navContent()}
+        <NavContent />
         <animated.svg onClick = {onClick} {...hover()} className = "nav-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                 <title>MenuIcon</title>
                 <animated.rect x="137" y={y} width="806" height="134" transform={svg}  fill={color}/>

@@ -281,7 +281,6 @@ const BannerImg = () => {
             justifyContent: 'center',
             position: 'relative',
             top: responsivePosition(),
-            justifySelf: 'center',
             justifyItems: 'center',
             backgroundColor: '#F9A846',
             borderRadius: '18px 18px 18px 18px',
