@@ -217,7 +217,7 @@ const Results = () => {
                 <h2>Signature Strengths</h2>
                 <p>Sebelum melanjutkan ke bagian selanjutnya, ada satu aspek kekuatan yang cukup penting yang tidak dilihat dalam alat ukur ini. Signature strengths adalah kekuatan yang bukan hanya dimiliki seseorang, tetapi juga menjadi bagian dari identitas dan keunikan seseorang. Signature strengths ketika digunakan terasa mudah dilakukan dan juga membuat orang merasa bahagia, terpenuhi, dan membuat orangnya ingin melakukan lagi dan lagi. Dalam alat ini signature strengths tidak diukur langsung, tapi tetap konsep ini perlu dipertimbangkan dalam melihat kekuatan orang dan diri sendiri.</p>
                 <h2>Kekuatan bisa berubah dan berkembang</h2>
-                <p>Hal terakhir yang perlu dipertimbangkan adalah bahwa kekuatan seseorang bisa berubah dan berkembang. Perubahan-perubahan ini bisa terjadi perlahan-lahan maupun dikarenakan ada kejadian signifikan dalam hidup seseorang.</p>
+                <p>Hal terakhir yang perlu dipertimbangkan adalah bahwa kekuatan seseorang bisa berubah dan berkembang. Perubahan-perubahan ini bisa terjadi secara perlahan, maupun tiba-tiba karena ada suatu peristiwa yang signifikan dalam hidup seseorang. Sehingga hasil yang didapat mungkin bisa berubah menjadi lebih baik maupun lebih buruk, kecuali signature strengths yang cenderung menetap dan tidak banyak berubah.</p>
         </div>
     )
 };
