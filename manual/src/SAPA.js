@@ -21,7 +21,10 @@ const SAPA = () => {
                     <BannerUR />
                 </Suspense>
                 <Results />
-            </div>    
+            </div>
+            <div className = "sapa-sq bg-color-2">
+                
+            </div>
         </div>
     );
 };
