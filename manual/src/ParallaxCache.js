@@ -1,5 +1,5 @@
 import { useController } from 'react-scroll-parallax';
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useEffect } from "react";
 
 const ParallaxCache = () => {
     const { parallaxController } = useController();
@@ -9,7 +9,13 @@ const ParallaxCache = () => {
         window.addEventListener('load', handler);
         return () => window.removeEventListener('load', handler);
     }, [parallaxController]);
- 
+
+    useEffect(() => {
+        window.requestAnimationFrame(() => {
+            parallaxController.update()
+        })
+    })
+    
     return null;
 };
 

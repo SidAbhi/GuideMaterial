@@ -28,3 +28,15 @@
     bottom: 0;
     left: 0;
 }
+.sapa-sq {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 7fr 6fr;
+}
+@media (max-width: 770px) {
+    .sapa-sq {
+        display: grid;
+        overflow: visible;
+        grid-template-columns: 1fr;
+        }
+}
