@@ -1,0 +1,2 @@
+.main-imgSapaContent{display:grid;position:absolute}.main-imgSapa,.main-imgSapaContent{top:0;left:0;width:100%;height:100vh;z-index:-1;align-content:"center";align-items:"center";align-self:"center"}.main-imgSapa{display:flex;position:relative}.main-imgSapaBG{position:absolute;width:100%;bottom:0;left:0}.sapa-sq{width:100%;display:grid;grid-template-columns:7fr 6fr}@media (max-width:770px){.sapa-sq{display:grid;overflow:visible;grid-template-columns:1fr}}
+/*# sourceMappingURL=5.997e47dd.chunk.css.map */
