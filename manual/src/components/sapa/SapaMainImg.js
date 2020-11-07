@@ -1,6 +1,7 @@
 import React from "react";
 import { Parallax } from 'react-scroll-parallax';
 import { animated, useSpring, to } from 'react-spring';
+import ParallaxCache from '../../ParallaxCache';
 
 const SapaMainImg = () => {
     const { rangeAnim } = useSpring({
@@ -147,6 +148,7 @@ const SapaMainImg = () => {
             <svg className = "main-imgSapaBG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                     <path d="M-261,1074C-184.7,934.5,11.7,937.4,49,938c131.2,2,130.1,59.7,288,95,214.4,48,459.6-4,589-60,17.5-7.6,57.1-25.7,114-36,91.8-16.6,166.4-1.6,212,8,108.1,22.8,166.7,35.1,201,79,71.8,91.9,6.4,283.6-84,384-124.7,138.4-266.8,19.2-769,51-241.7,15.3-390.3,52-617-10-160.4-43.8-225.1-100.2-254-166C-300.7,1215.6-294.3,1134.9-261,1074Z" fill="#f4f4f4"/>
             ]</svg>
+            <ParallaxCache />
             <Parallax y = {[20, -20]}
             styleInner = {{
                 position: 'absolute',

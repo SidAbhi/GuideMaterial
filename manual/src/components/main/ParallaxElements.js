@@ -8,6 +8,7 @@ import { ReactComponent as BG1} from '../../images/BG1.svg';
 import { ReactComponent as Pen} from '../../images/Pen.svg';
 import { ReactComponent as BG2 } from '../../images/ManualIllust1.svg';
 import { ReactComponent as DataIllust} from '../../images/Data1.svg';
+import ParallaxCache from '../../ParallaxCache';
 
 const MainImg = () => {
     //Device check
@@ -76,6 +77,7 @@ const MainImg = () => {
     
     return (    
         <div className = "main-img">
+            <ParallaxCache />
             <Parallax y={ mobileLaxVal(0, 0) } styleInner = { styleBotAlign() } styleOuter = {{pointerEvents: 'none'}}>
                 <div className = "main-img-bg bg-color-1"></div>
             </Parallax>
