@@ -28,6 +28,12 @@
     bottom: 0;
     left: 0;
 }
+
+.quote-sapa {
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
+
 .sapa-sq {
     width: 100%;
     display: grid;
